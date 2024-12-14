@@ -1,0 +1,6 @@
+@font-face {
+  font-family: "PP Neue Montreal"; /* Укажите имя шрифта */
+  font-weight: 500; /* Насыщенность (например, normal или bold) */
+  font-style: normal; /* Стиль (например, normal, italic) */
+  src: url("../fonts/ppneuemontreal-medium.otf") format("opentype"); /* Подключение файла */
+}
