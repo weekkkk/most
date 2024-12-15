@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex flex-col items-center">
     <div ref="container" class="keen-slider">
-      <figure v-for="i in 4" :key="i" class="keen-slider__slide h-[35.5rem]">
+      <figure v-for="i in 4" :key="i" class="keen-slider__slide h-[45rem]">
         <img src="/imgs/slide.jpg" class="w-full h-full object-cover" />
       </figure>
     </div>
