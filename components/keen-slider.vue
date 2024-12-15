@@ -9,7 +9,7 @@
     <button
       v-if="slider"
       @click="slider.prev()"
-      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all left-0"
+      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all left-14"
     >
       <img class="h-[1.2rem] w-[1.2rem]" src="/icons/arrow-left.svg" />
     </button>
@@ -17,14 +17,14 @@
     <button
       v-if="slider"
       @click="slider.next()"
-      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all right-0"
+      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all right-14"
     >
       <img class="h-[1.2rem] w-[1.2rem]" src="/icons/arrow-right.svg" />
     </button>
 
     <ul
       v-if="slider"
-      class="absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2"
+      class="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2"
     >
       <li v-for="(_slide, idx) in dotHelper" :key="idx">
         <button
