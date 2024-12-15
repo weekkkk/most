@@ -7,6 +7,12 @@
       <LayoutProcess />
 
       <LayoutReviews />
+
+      <LayoutComparison />
+
+      <LayoutFaq />
+
+      <LayoutFooter />
     </div>
   </main>
 </template>

@@ -5,5 +5,5 @@ const props = defineProps<UiMenuProps<string, string>>();
 </script>
 
 <template>
-  <UiMenu v-bind="{ header, items }"></UiMenu>
+  <UiMenu v-bind="{ absolute, header, items }"></UiMenu>
 </template>
