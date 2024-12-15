@@ -3,7 +3,7 @@ import type { LayoutProcessStepProps } from "./interfaces";
 
 const props = defineProps<LayoutProcessStepProps>();
 
-const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
+const bgImg = computed(() => `url(icons/${props.icon}.svg)`);
 </script>
 
 <template>
