@@ -5,7 +5,7 @@
         <li class="w-full">
           мы в интернете
 
-          <ul class="mt-8 flex flex-col gap-1 text-brand-100">
+          <ul class="mt-8 flex flex-col gap-1">
             <li>
               <a href="#">instagram*</a>
             </li>
@@ -23,7 +23,7 @@
         <li class="w-full text-right">
           поговорим?
 
-          <ul class="mt-8 text-brand-100">
+          <ul class="mt-8">
             <li>
               <a href="#">mostcleanru@gmail.com</a>
             </li>

@@ -6,32 +6,33 @@
       </figure>
     </div>
 
-    <button
+    <UiButton
       v-if="slider"
+      :disabled="!current"
       @click="slider.prev()"
-      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all left-14"
-    >
-      <img class="h-[1.2rem] w-[1.2rem]" src="/icons/arrow-left.svg" />
-    </button>
+      img="/icons/arrow-left.svg"
+      class="absolute top-1/2 -translate-y-1/2 left-14"
+    />
 
-    <button
+    <UiButton
       v-if="slider"
+      :disabled="dotHelper.at(-1) === current"
       @click="slider.next()"
-      class="absolute top-1/2 -translate-y-1/2 rounded-full bg-brand-100 h-12 w-12 p-[0.9rem] transition-all right-14"
-    >
-      <img class="h-[1.2rem] w-[1.2rem]" src="/icons/arrow-right.svg" />
-    </button>
+      img="/icons/arrow-right.svg"
+      class="absolute top-1/2 -translate-y-1/2 right-14"
+    />
 
     <ul
       v-if="slider"
       class="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2"
     >
       <li v-for="(_slide, idx) in dotHelper" :key="idx">
-        <button
-          class="rounded-full h-3 w-3"
+        <UiButton
+          class="h-[15px] w-[15px]"
+          style="padding: 0"
           @click="slider.moveToIdx(idx)"
+          :readonly="current === idx"
           :class="{
-            'bg-brand-100': current === idx,
             'bg-second-0': current !== idx,
           }"
         />
@@ -41,7 +42,7 @@
 </template>
 
 <script lang="ts" setup>
-const current = ref(1);
+const current = ref(0);
 
 const [container, slider] = useKeenSlider({
   initial: current.value,
