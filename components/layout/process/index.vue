@@ -78,7 +78,10 @@ const rightList: LayoutProcessStepProps[] = [
 
       <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
         <figure
-          :class="['md:h-[29rem] md:w-[38.5rem]', 'max-md:aspect-[1.38]']"
+          :class="[
+            'md:h-[29rem] md:w-[38.5rem]',
+            'max-md:aspect-[1.38] overflow-hidden',
+          ]"
         >
           <img
             :class="[
