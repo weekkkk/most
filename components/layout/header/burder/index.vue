@@ -35,7 +35,7 @@ const maxHeight = computed(() => $menu.value?.$el.clientHeight);
 
     <div class="max-h-0">
       <div
-        class="max-h-[calc(100vh-3rem-1.75rem)] overflow-hidden transition-all"
+        class="max-h-[calc(100vh-3rem-1.75rem)] overflow-hidden transition-all duration-200"
         :style="{ maxHeight: (!visible && '0px') || undefined }"
       >
         <!-- class="max-h-0 overflow-hidden transition-all" -->
