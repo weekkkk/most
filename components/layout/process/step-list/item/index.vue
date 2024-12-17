@@ -11,21 +11,19 @@ const bgImg = computed(() => `url(/most/icons/${props.icon}.svg)`);
     :class="[
       'inline-flex',
       'items-center',
-      'gap-8',
+      'md:gap-8 max-md:gap-[0.4rem]',
       'whitespace-pre-wrap',
-      'text-[2rem] leading-[1.5rem]',
+      'md:text-[2rem]',
+      'md:leading-[1.5rem] max-md:leading-control',
       'before:inline-flex',
-      'before:h-[80px] before:w-[80px]',
+      'md:before:h-[80px] max-md:before:h-8',
+      'md:before:w-[80px] max-md:before:w-8',
       'before:items-center before:justify-center',
-      `before:bg-[)]`,
-      'before:bg-[length:2.5rem] before:bg-center before:bg-no-repeat before:bg-brand-100',
+      'md:before:bg-[length:50px] max-md:before:bg-[length:1.2rem]',
+      'before:bg-center before:bg-no-repeat before:bg-brand-100',
       'before:rounded-full',
       'before:rounded-full',
     ]"
-    :style="{
-      marginLeft: left && `${left}rem`,
-      marginRight: right && `${right}rem`,
-    }"
   >
     <slot>
       {{ label }}
@@ -34,6 +32,9 @@ const bgImg = computed(() => `url(/most/icons/${props.icon}.svg)`);
 </template>
 
 <style scoped>
+li {
+  margin: 0 calc(v-bind(right) * 1rem) 0 calc(v-bind(left) * 1rem);
+}
 li::before {
   background-image: v-bind(bgImg);
 }

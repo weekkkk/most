@@ -1,13 +1,13 @@
 <template>
   <div class="relative flex flex-col items-center">
     <div ref="container" class="keen-slider">
-      <figure
+      <div
+        class="flex justify-center keen-slider__slide"
         v-for="i in 4"
         :key="i"
-        :class="['keen-slider__slide', 'md:h-[45rem] max-md:aspect-[345/175]']"
       >
-        <img src="/imgs/slide.jpg" class="w-full h-full object-cover" />
-      </figure>
+        <LayoutReviewsItem class="h-52 w-[8.4rem]" />
+      </div>
     </div>
 
     <UiButton
@@ -15,10 +15,7 @@
       :disabled="!current"
       @click="slider.prev()"
       img="/icons/arrow-left.svg"
-      :class="[
-        'absolute top-1/2 -translate-y-1/2 disabled:bg-common',
-        'md:left-14 max-md:left-0',
-      ]"
+      class="absolute top-1/2 -translate-y-1/2 md:left-14 max-md:left-0 disabled:bg-common"
     />
 
     <UiButton
@@ -26,29 +23,25 @@
       :disabled="dotHelper.at(-1) === current"
       @click="slider.next()"
       img="/icons/arrow-right.svg"
-      :class="[
-        'absolute top-1/2 -translate-y-1/2 right-14 disabled:bg-common',
-        'md:right-14 max-md:right-0',
-      ]"
+      class="absolute top-1/2 -translate-y-1/2 md:right-14 max-md:right-0 disabled:bg-common"
     />
 
     <ul
       v-if="slider"
       :class="[
-        'absolute left-1/2 -translate-x-1/2 flex gap-2',
-        'md:bottom-14 max-md:bottom-2',
+        'absolute left-1/2 -translate-x-1/2 flex gap-2 bottom-14',
+        'max-md:hidden',
       ]"
     >
       <li v-for="(_slide, idx) in dotHelper" :key="idx">
         <UiButton
+          class="h-[15px] w-[15px]"
           style="padding: 0"
           @click="slider.moveToIdx(idx)"
           :readonly="current === idx"
-          :class="[
-            'md:h-[15px] max-md:h-[0.4rem]',
-            'md:w-[15px] max-md:w-[0.4rem]',
-            { 'bg-second-0': current !== idx },
-          ]"
+          :class="{
+            'bg-second-0': current !== idx,
+          }"
         />
       </li>
     </ul>

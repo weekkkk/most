@@ -1,9 +1,16 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section>
+  <section class="max-md:px-3">
     <header class="text-center">
-      <h2 class="text-[5rem] leading-small">сравни</h2>
+      <h2
+        :class="[
+          'md:text-[5rem] max-md:text-[1.75rem]',
+          'md:leading-small max-md:leading-[1.5rem]',
+        ]"
+      >
+        сравни
+      </h2>
     </header>
 
     <main>

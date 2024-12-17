@@ -12,10 +12,10 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
 
 <template>
   <li
-    class="text-[1.5rem] leading-small py-8 last:pb-0 border-second-50 border-t"
+    class="md:text-[1.5rem] leading-small py-8 last:pb-0 border-second-50 border-t"
   >
-    <header class="flex items-center">
-      <p class="grow">
+    <header :class="['flex items-center', 'max-md:mb-3']">
+      <p class="grow max-md:whitespace-pre-wrap">
         <slot>
           {{ question }}
         </slot>
@@ -29,7 +29,7 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
     </header>
 
     <main
-      class="w-[36.9rem] max-h-0 transition-all overflow-hidden"
+      class="w-[36.9rem] max-w-full max-h-0 transition-all overflow-hidden"
       :style="visible && { maxHeight: maxH }"
     >
       <p ref="$answer" class="text-brand-100">

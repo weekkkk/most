@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { LayoutHeaderMenuProps } from "./menu";
+import type { LayoutHeaderMenuProps } from "./menu-list/item";
 
 const items = ["test 1", "test 2", "test 3"];
 
@@ -68,21 +68,16 @@ onMounted(() => {
 <template>
   <header
     id="test_1"
-    class="z-50 fixed inset-x-0 top-0 flex items-center justify-between mt-14 mx-14"
+    :class="[
+      'z-50 fixed inset-x-0 top-0 flex items-center justify-between',
+      'md:mt-14 max-md:mt-12',
+      'md:mx-14 max-md:mx-3',
+    ]"
   >
-    <nav class="w-full">
-      <ul class="flex">
-        <LayoutHeaderMenu
-          v-for="li in leftMenuList"
-          :key="li.header"
-          v-bind="{ ...li }"
-          absolute
-        />
-      </ul>
-    </nav>
+    <LayoutHeaderMenuList class="max-md:hidden w-full" :list="leftMenuList" />
     <div :class="{ 'text-brand-100': !isLight, 'text-default': isLight }">
       <svg
-        class="h-[1.7rem]"
+        class="md:h-[1.7rem] max-md:h-[1rem]"
         viewBox="0 0 179 34"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -105,15 +100,14 @@ onMounted(() => {
         />
       </svg>
     </div>
-    <nav class="w-full">
-      <ul class="flex justify-end">
-        <LayoutHeaderMenu
-          v-for="li in rightMenuList"
-          :key="li.header"
-          v-bind="{ ...li }"
-          absolute
-        />
-      </ul>
-    </nav>
+    <LayoutHeaderMenuList
+      class="max-md:hidden w-full"
+      :list="rightMenuList"
+      right
+    />
+    <LayoutHeaderBurder
+      class="hidden max-md:inline-block"
+      :list="[...leftMenuList, ...rightMenuList]"
+    />
   </header>
 </template>

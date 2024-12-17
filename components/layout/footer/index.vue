@@ -1,47 +1,70 @@
 <template>
-  <footer class="px-14 text-[1.5rem] leading-small pb-20">
-    <section class="mb-20">
-      <ul class="flex justify-between">
-        <li class="w-full">
-          мы в интернете
+  <footer
+    class="md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem]"
+  >
+    <ul
+      :class="['grid md:gap-y-4', 'md:grid-cols-3 max-md:grid-cols-1fr_4rem']"
+    >
+      <li class="w-full max-md:col-start-1 max-md:col-end-2 max-md:mb-[2.4rem]">
+        мы в интернете
 
-          <ul class="mt-8 flex flex-col gap-1">
-            <li>
-              <a href="#">instagram*</a>
-            </li>
-            <li>
-              <a href="#">youtube</a>
-            </li>
-            <li>
-              <a href="#">telegram</a>
-            </li>
-          </ul>
-        </li>
+        <ul :class="['flex flex-col gap-1', 'md:mt-8 max-md:mt-3']">
+          <li>
+            <a href="#">instagram*</a>
+          </li>
+          <li>
+            <a href="#">youtube</a>
+          </li>
+          <li>
+            <a href="#">telegram</a>
+          </li>
+        </ul>
+      </li>
 
-        <li class="w-full text-center">политика конф</li>
+      <li class="w-full md:text-center max-md:col-start-1 max-md:mb-[0.8rem]">
+        политика конф
+      </li>
 
-        <li class="w-full text-right">
-          поговорим?
+      <li
+        class="w-full md:text-right max-md:col-start-1 max-md:col-end-3 max-md:row-start-2 max-md:mb-[2.4rem]"
+      >
+        поговорим?
 
-          <ul class="mt-8">
-            <li>
-              <a href="#">mostcleanru@gmail.com</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+        <ul class="md:mt-8 max-md:mt-3">
+          <li>
+            <a href="#">mostcleanru@gmail.com</a>
+          </li>
+        </ul>
+      </li>
 
-    <section>
-      <ul class="flex justify-between items-center">
-        <li class="w-full">*meta запрещена в России</li>
-        <li
-          class="shrink-0 h-20 w-20 flex justify-center items-center bg-brand-100 text-default text-[2rem] rounded-full leading-control"
+      <li class="w-full flex items-center max-md:col-start-1 max-md:col-end-3">
+        *meta запрещена в России
+      </li>
+
+      <li
+        :class="[
+          'shrink-0 flex',
+          'max-md:col-start-2 max-md:row-start-1 max-md:col-end-3',
+          'md:justify-center max-md:justify-end',
+          'md:items-center max-md:items-start',
+        ]"
+      >
+        <div
+          :class="[
+            'inline-flex justify-center items-center bg-brand-100 text-default md:text-[2rem] rounded-full leading-control',
+            'md:h-20 max-md:h-16',
+            'md:w-20 max-md:w-16',
+          ]"
         >
           ап
-        </li>
-        <li class="w-full text-right">c в круге 2024</li>
-      </ul>
-    </section>
+        </div>
+      </li>
+
+      <li
+        class="w-full md:justify-end text-right flex items-center max-md:col-start-1 max-md:col-end-3 max-md:row-start-4 max-md:mb-[0.8rem]"
+      >
+        c в круге 2024
+      </li>
+    </ul>
   </footer>
 </template>

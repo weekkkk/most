@@ -1,9 +1,9 @@
 <template>
   <LayoutHeader />
-  <main class="class flex flex-col gap-60">
+  <main :class="['flex flex-col', 'md:gap-60 max-md:gap-20']">
     <LayoutBanner id="test" />
 
-    <div class="flex flex-col gap-[22.5rem]">
+    <div :class="['flex flex-col', 'md:gap-[22.5rem] max-md:gap-40']">
       <LayoutProcess />
 
       <LayoutReviews />

@@ -8,9 +8,14 @@
     font-family: "PP Neue Montreal" !important;
     font-weight: 500 !important;
     font-size: 1.041666666666667vw;
-    line-height: 1;
+    line-height: 1 !important;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* Internet Explorer 10+ */
+  }
+  @media (max-width: 768px) {
+    :root {
+      font-size: 20px;
+    }
   }
   a:not(:hover) {
     color: #0094ff !important;

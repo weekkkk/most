@@ -5,9 +5,9 @@ const props = defineProps<UiMenuProps<HT, IT>>();
 </script>
 
 <template>
-  <li class="menu group list-none inline-flex flex-col">
+  <li class="max-md:text-[0.7rem] menu group list-none inline-flex flex-col">
     <button
-      class="menu-header bg-brand-100 text-default w-full p-[20px] leading-control rounded-t-[calc(10px+1.2rem)] rounded-b-[calc(10px+1.2rem)] group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0"
+      class="menu-header bg-brand-100 text-default w-full md:p-[20px] max-md:p-3 md:leading-control max-md:leading-[0.25rem] md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem] group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0"
     >
       <slot name="header" v-bind="{ header }">
         {{ header }}
@@ -16,7 +16,7 @@ const props = defineProps<UiMenuProps<HT, IT>>();
 
     <div :class="{ 'max-h-0': absolute }">
       <div
-        class="menu-item_list -mt-3 bg-brand-100 rounded-b-[calc(10px+1.2rem)] max-h-0 overflow-hidden transition-all group-hover:delay-75"
+        class="menu-item_list md:-mt-3 max-md:-mt-1 bg-brand-100 md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-b-[0.875rem] max-h-0 overflow-hidden transition-all group-hover:delay-75"
       >
         <ul class="text-common list-none">
           <li
@@ -25,7 +25,7 @@ const props = defineProps<UiMenuProps<HT, IT>>();
             :key="index"
           >
             <button
-              class="text-left hover:text-default transition-colors w-full px-4 py-1"
+              class="text-left hover:text-default transition-colors w-full md:px-[20px] max-md:px-3 py-[5px]"
             >
               <slot v-bind="{ item }">
                 {{ item }}

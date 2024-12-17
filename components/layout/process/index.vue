@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { LayoutProcessStepProps } from "./step";
+import type { LayoutProcessStepProps } from "./step-list/item";
 
 const leftList: LayoutProcessStepProps[] = [
   {
@@ -57,39 +57,45 @@ const rightList: LayoutProcessStepProps[] = [
 </script>
 
 <template>
-  <section class="px-[7.6rem]">
-    <header class="px-[14rem] text-center mb-20">
-      <h2 class="text-[5rem] leading-small">как же мы ремонтируем сумки</h2>
+  <section class="md:px-[7.6rem] max-md:px-3">
+    <header class="text-center mb-20">
+      <h2
+        :class="[
+          'md:text-[5rem] max-md:text-[1.75rem]',
+          'md:leading-small max-md:leading-[1.5rem]',
+        ]"
+      >
+        как же мы<br />
+        ремонтируем<br class="md:hidden" />
+        сумки
+      </h2>
     </header>
 
-    <main class="flex justify-between items-center">
-      <ul class="inline-flex flex-col items-start gap-[6.5rem]">
-        <LayoutProcessStep
-          v-for="li in leftList"
-          :key="li.icon"
-          v-bind="{ ...li }"
-        />
-      </ul>
+    <main
+      :class="['grid', 'md:grid-cols-3 max-md:grid-cols-1', 'max-md:gap-8']"
+    >
+      <LayoutProcessStepList :list="leftList" />
 
-      <figure class="h-[29rem] w-[38.5rem]">
-        <img
-          class="object-cover w-full h-full"
-          src="/imgs/process/main.png"
-          alt="Сумка на ремонте"
-        />
-      </figure>
+      <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
+        <figure
+          :class="['md:h-[29rem] md:w-[38.5rem]', 'max-md:aspect-[1.38]']"
+        >
+          <img
+            :class="[
+              'object-cover w-full h-full',
+              'max-md:scale-[1.4] max-md:translate-y-4',
+            ]"
+            src="/imgs/process/main.png"
+            alt="Сумка на ремонте"
+          />
+        </figure>
+      </div>
 
-      <ul class="inline-flex flex-col items-end gap-[6.5rem]">
-        <LayoutProcessStep
-          v-for="li in rightList"
-          :key="li.icon"
-          v-bind="{ ...li }"
-        />
-      </ul>
+      <LayoutProcessStepList :list="rightList" right />
     </main>
 
-    <footer class="mt-28 flex justify-center">
-      <UiButton>обратиться сейчас</UiButton>
+    <footer :class="['md:mt-28 max-md:mt-4', ' flex justify-center']">
+      <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
     </footer>
   </section>
 </template>
