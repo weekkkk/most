@@ -1,9 +1,15 @@
 <script lang="ts" setup generic="IT">
-import type { UiMenuProps } from "~/components/ui";
+import type { LayoutHeaderMenuListItemProps } from "./interfaces";
 
-const props = defineProps<UiMenuProps<string, string>>();
+const props = defineProps<LayoutHeaderMenuListItemProps>();
 </script>
 
 <template>
-  <UiMenu v-bind="{ absolute, header, items }"></UiMenu>
+  <UiMenu v-bind="{ absolute, header, items }">
+    <template #default="{ item: { title, to } }">
+      <NuxtLink v-bind="{ to }">
+        {{ title }}
+      </NuxtLink>
+    </template>
+  </UiMenu>
 </template>

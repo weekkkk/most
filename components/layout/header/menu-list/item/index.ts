@@ -1,1 +1,1 @@
-export type { LayoutHeaderMenuProps } from "./interfaces";
+export type { LayoutHeaderMenuListItemProps } from "./interfaces";

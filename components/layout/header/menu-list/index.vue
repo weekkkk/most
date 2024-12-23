@@ -1,8 +1,8 @@
 <script lang="ts" setup generic="IT">
-import { LayoutHeaderMenuProps } from "./item";
+import type { LayoutHeaderMenuListItemProps } from "./item";
 
 const props = defineProps<{
-  list: LayoutHeaderMenuProps<string, string>[];
+  list: LayoutHeaderMenuListItemProps[];
   right?: boolean;
   noAbsolute?: boolean;
   col?: boolean;

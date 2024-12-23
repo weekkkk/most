@@ -1,59 +1,23 @@
 <script setup lang="ts">
 import type { LayoutProcessStepProps } from "./step-list/item";
+import type { LayoutProcessProps } from "./types";
 
-const leftList: LayoutProcessStepProps[] = [
-  {
-    icon: "fire",
-    label: "Первичная\nоценка",
-    left: 4.3,
-  },
-  {
-    icon: "magicpen",
-    label: "Очистка",
-    left: 1.7,
-  },
-  {
-    icon: "bucket",
-    label: "Ремонт швов",
-    left: 2,
-  },
-  {
-    icon: "drop",
-    label: "Замена\nфурнитуры",
-  },
-  {
-    icon: "brush",
-    label: "Обновление\nручек",
-    left: 7.4,
-  },
-];
+const props = defineProps<LayoutProcessProps>();
 
-const rightList: LayoutProcessStepProps[] = [
-  {
-    icon: "restoration",
-    label: "Реставрация\nматериалов",
-    right: 4.3,
-  },
-  {
-    icon: "work",
-    label: "Работа\nс подкладкой",
-    right: 1.7,
-  },
-  {
-    icon: "scissor",
-    label: "Пропитка\nи защита",
-    right: 2,
-  },
-  {
-    icon: "polishing",
-    label: "Полировка",
-  },
-  {
-    icon: "heart",
-    label: "Финальная\nпроверка",
-    right: 7.4,
-  },
-];
+const ms = [4.3, 1.7, 2, 0, 7.4];
+
+const leftSteps = computed(() =>
+  props.startSteps.map<LayoutProcessStepProps>((step, i) => ({
+    ...step,
+    left: ms[i],
+  }))
+);
+const rightSteps = computed(() =>
+  props.endSteps.map<LayoutProcessStepProps>((step, i) => ({
+    ...step,
+    right: ms[i],
+  }))
+);
 </script>
 
 <template>
@@ -63,18 +27,17 @@ const rightList: LayoutProcessStepProps[] = [
         :class="[
           'md:text-[5rem] max-md:text-[1.75rem]',
           'md:leading-small max-md:leading-[1.5rem]',
+          'whitespace-pre-wrap',
         ]"
       >
-        как же мы<br />
-        ремонтируем<br class="md:hidden" />
-        сумки
+        {{ title }}
       </h2>
     </header>
 
     <main
       :class="['grid', 'md:grid-cols-3 max-md:grid-cols-1', 'max-md:gap-8']"
     >
-      <LayoutProcessStepList :list="leftList" />
+      <LayoutProcessStepList :list="leftSteps" />
 
       <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
         <figure
@@ -88,13 +51,13 @@ const rightList: LayoutProcessStepProps[] = [
               'object-cover w-full h-full',
               'max-md:scale-[1.4] max-md:translate-y-4',
             ]"
-            src="/imgs/process/main.png"
-            alt="Сумка на ремонте"
+            :src="`/imgs/process/${image}`"
+            alt=""
           />
         </figure>
       </div>
 
-      <LayoutProcessStepList :list="rightList" right />
+      <LayoutProcessStepList :list="rightSteps" right />
     </main>
 
     <footer :class="['md:mt-28 max-md:mt-4', ' flex justify-center']">

@@ -1,40 +1,60 @@
 <script lang="ts" setup>
-import type { LayoutHeaderMenuProps } from "./menu-list/item";
+import type { LayoutHeaderMenuListItemProps } from "./menu-list/item";
 
-const items = ["test 1", "test 2", "test 3"];
-
-const leftMenuList: LayoutHeaderMenuProps[] = [
-  {
-    header: "Химчистка",
-    items,
-  },
+const leftMenuList: LayoutHeaderMenuListItemProps[] = [
+  // {
+  //   header: "Химчистка",
+  //   items,
+  // },
+  // {
+  //   header: "ремонт",
+  //   items,
+  // },
   {
     header: "ремонт",
-    items,
+    items: [
+      {
+        title: "сумки",
+        to: "/repair/bags",
+      },
+      {
+        title: "обувь",
+        to: "/repair/shoes",
+      },
+    ],
   },
   {
     header: "реставрация",
-    items,
+    items: [
+      {
+        title: "сумки",
+        to: "/restoration/bags",
+      },
+      {
+        title: "обувь",
+        to: "/restoration/shoes",
+      },
+    ],
   },
-  {
-    header: "обувь",
-    items,
-  },
+  // {
+  //   header: "обувь",
+  //   items,
+  // },
 ];
 
-const rightMenuList: LayoutHeaderMenuProps[] = [
-  {
-    header: "Цены",
-    items,
-  },
-  {
-    header: "Доставка",
-    items,
-  },
-  {
-    header: "Контакты",
-    items,
-  },
+const rightMenuList: LayoutHeaderMenuListItemProps[] = [
+  // {
+  //   header: "Цены",
+  //   items,
+  // },
+  // {
+  //   header: "Доставка",
+  //   items,
+  // },
+  // {
+  //   header: "Контакты",
+  //   items,
+  // },
 ];
 
 const isLight = ref(true);

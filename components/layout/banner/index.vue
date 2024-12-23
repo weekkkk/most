@@ -1,4 +1,8 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import type { LayoutBannerProps } from "./types";
+
+const props = defineProps<LayoutBannerProps>();
+</script>
 
 <template>
   <section :class="['relative', 'md:h-[82.5rem] max-md:h-[47.5rem]']">
@@ -7,7 +11,6 @@
         'absolute object-cover w-full h-full',
         'text-center text-default',
         'md:py-60 max-md:py-[10.25rem]',
-        'lg:px-[10.5rem]',
       ]"
     >
       <h1
@@ -15,29 +18,29 @@
           'md:text-[9rem] max-md:text-[2.5rem]',
           'md:leading-[6rem] max-md:leading-[2rem]',
           'md:mb-10 max-md:mb-4',
+          'md:whitespace-pre-wrap',
         ]"
       >
-        премиальный ремонт сумок
+        {{ title }}
       </h1>
 
       <p
         :class="[
           'md:text-[2rem]',
-          'md:mb-14 max-md:mb-3',
-          'md:px-[10.7rem] max-md:px-6',
+          'md:mb-14 max-md:mb-3 mx-auto',
+          'md:w-[53.6rem] max-md:px-6',
           'leading-control',
         ]"
       >
-        в нашем мире, где внешний вид играет важную роль, мы стремимся
-        предоставить вам лучшие услуги по уходу за вашими любимыми вещами
+        {{ description }}
       </p>
 
-      <UiButton> отремонтировать </UiButton>
+      <UiButton> {{ actionText }} </UiButton>
     </div>
 
     <img
       class="object-cover w-full h-full"
-      src="/imgs/banner/main.png"
+      :src="`/imgs/banners/${image}`"
       alt=""
     />
   </section>

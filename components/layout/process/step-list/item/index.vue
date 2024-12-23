@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import type { LayoutProcessStepProps } from "./interfaces";
 
-const props = defineProps<LayoutProcessStepProps>();
+const props = withDefaults(defineProps<LayoutProcessStepProps>(), {
+  left: 0,
+  right: 0,
+});
 
 const bgImg = computed(() => `url(/most/icons/${props.icon}.svg)`);
 </script>
@@ -23,6 +26,7 @@ const bgImg = computed(() => `url(/most/icons/${props.icon}.svg)`);
       'before:bg-center before:bg-no-repeat before:bg-brand-100',
       'before:rounded-full',
       'before:rounded-full',
+      'max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full',
     ]"
   >
     <slot>
@@ -34,6 +38,11 @@ const bgImg = computed(() => `url(/most/icons/${props.icon}.svg)`);
 <style scoped>
 li {
   margin: 0 calc(v-bind(right) * 1rem) 0 calc(v-bind(left) * 1rem);
+}
+@media (max-width: 768px) {
+  li {
+    margin: 0 !important;
+  }
 }
 li::before {
   background-image: v-bind(bgImg);

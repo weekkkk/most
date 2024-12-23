@@ -1,0 +1,61 @@
+<script setup lang="ts">
+definePageMeta({
+  banner: {
+    title: "премиальная\nреставрация сумок",
+    description:
+      "в нашем мире, где внешний вид играет важную роль, мы стремимся предоставить вам лучшие услуги по уходу за вашими любимыми вещами",
+    actionText: "отреставрировать",
+    image: "restoration/bags.png",
+  },
+  process: {
+    title: "как же мы\nреставрируем сумки",
+    image: "restoration/bags.png",
+    startSteps: [
+      {
+        icon: "fire",
+        label: "Диагностика\nсостояния",
+      },
+      {
+        icon: "magicpen",
+        label: "Очистка\nповерхности",
+      },
+      {
+        icon: "bucket",
+        label: "Ремонт швов",
+      },
+      {
+        icon: "drop",
+        label: "Замена\nфурнитуры",
+      },
+      {
+        icon: "brush",
+        label: "Восстановление\nкожи",
+      },
+    ],
+    endSteps: [
+      {
+        icon: "restoration",
+        label: "Ремонт ручек\nи ремней",
+      },
+      {
+        icon: "work",
+        label: "Реставрация\nподкладки",
+      },
+      {
+        icon: "scissor",
+        label: "Полировка\nи уход",
+      },
+      {
+        icon: "polishing",
+        label: "Пропитка\nи защита",
+      },
+      {
+        icon: "heart",
+        label: "Финальная\nпроверка",
+      },
+    ],
+  },
+});
+</script>
+
+<template></template>

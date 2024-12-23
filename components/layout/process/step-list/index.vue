@@ -19,7 +19,6 @@ const props = defineProps<{
       v-for="li in list"
       :key="li.icon"
       v-bind="{ ...li }"
-      class="max-md:ml-0 max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full"
     />
   </ul>
 </template>
