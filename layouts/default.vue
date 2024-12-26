@@ -26,4 +26,6 @@ const processProps = computed(() => route.meta.process as LayoutProcessProps);
       <LayoutFooter />
     </div>
   </main>
+
+  <NuxtPage />
 </template>

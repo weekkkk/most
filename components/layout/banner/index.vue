@@ -5,10 +5,16 @@ const props = defineProps<LayoutBannerProps>();
 </script>
 
 <template>
-  <section :class="['relative', 'md:h-[82.5rem] max-md:h-[47.5rem]']">
+  <section
+    :class="[
+      'relative',
+      'overflow-hidden',
+      'md:h-[82.5rem] max-md:h-[47.5rem]',
+    ]"
+  >
     <div
       :class="[
-        'absolute object-cover w-full h-full',
+        'absolute object-cover w-full h-full z-10',
         'text-center text-default',
         'md:py-60 max-md:py-[10.25rem]',
       ]"

@@ -7,7 +7,7 @@ const props = defineProps<LayoutHeaderMenuListItemProps>();
 <template>
   <UiMenu v-bind="{ absolute, header, items }">
     <template #default="{ item: { title, to } }">
-      <NuxtLink v-bind="{ to }">
+      <NuxtLink :to="to" active-class="text-default">
         {{ title }}
       </NuxtLink>
     </template>

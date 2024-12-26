@@ -67,4 +67,12 @@
       </li>
     </ul>
   </footer>
+  <footer class="fixed bottom-16 inset-x-16 flex justify-between">
+    <nav>
+      <UiButton img="/icons/whatsapp.svg" />
+      <UiButton img="/icons/telegram.svg" />
+    </nav>
+
+    <UiButton img="/icons/phone.svg" />
+  </footer>
 </template>
