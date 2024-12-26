@@ -15,11 +15,15 @@
 
     <main>
       <ClientOnly>
-        <KeenSlider />
+        <UiSlider dot>
+          <LayoutComparisonSlide v-for="i in 4" :key="i" />
+        </UiSlider>
       </ClientOnly>
 
       <ClientOnly>
-        <KeenSlider />
+        <UiSlider dot>
+          <LayoutComparisonSlide v-for="i in 4" :key="i" />
+        </UiSlider>
       </ClientOnly>
     </main>
   </section>

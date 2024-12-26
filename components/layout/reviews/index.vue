@@ -25,7 +25,15 @@
 
     <main class="hidden max-md:block">
       <ClientOnly>
-        <ReviewsSlider />
+        <UiSlider>
+          <div
+            class="flex justify-center keen-slider__slide"
+            v-for="i in 4"
+            :key="i"
+          >
+            <LayoutReviewsItem class="h-52 w-[8.4rem]" />
+          </div>
+        </UiSlider>
       </ClientOnly>
     </main>
   </section>

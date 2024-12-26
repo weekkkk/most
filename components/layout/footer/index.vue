@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem]"
+    class="md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem] md:mt-[22.5rem] max-md:mt-40"
   >
     <ul
       :class="['grid md:gap-y-4', 'md:grid-cols-3 max-md:grid-cols-1fr_4rem']"

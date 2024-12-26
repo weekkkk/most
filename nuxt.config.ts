@@ -22,6 +22,6 @@ export default defineNuxtConfig({
     preset: "static", // Указывает, что приложение статическое
   },
   app: {
-    baseURL: "/most/", // Базовый путь
+    baseURL: "/most", // Базовый путь
   },
 });
