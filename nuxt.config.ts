@@ -21,7 +21,4 @@ export default defineNuxtConfig({
   nitro: {
     preset: "static", // Указывает, что приложение статическое
   },
-  app: {
-    baseURL: "/most", // Базовый путь
-  },
 });
