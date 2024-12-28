@@ -1,0 +1,56 @@
+{
+  "banner": {
+    "title": "премиальный\nремонт обуви",
+    "description": "в нашем мире, где внешний вид играет важную роль, мы стремимся предоставить вам лучшие услуги по уходу за вашими любимыми вещами",
+    "actionText": "отремонтировать",
+    "image": "repair/shoes"
+  },
+  "process": {
+    "title": "как же мы\nремонтируем обувь",
+    "image": "repair/shoes",
+    "startSteps": [
+      {
+        "icon": "fire",
+        "label": "Первичная\nоценка"
+      },
+      {
+        "icon": "magicpen",
+        "label": "Очистка"
+      },
+      {
+        "icon": "bucket",
+        "label": "Ремонт швов"
+      },
+      {
+        "icon": "drop",
+        "label": "Замена\nдеталей"
+      },
+      {
+        "icon": "brush",
+        "label": "Реставрация\nматериала"
+      }
+    ],
+    "endSteps": [
+      {
+        "icon": "restoration",
+        "label": "Обновление\nподошвы"
+      },
+      {
+        "icon": "work",
+        "label": "Ремонт\nкаблуков"
+      },
+      {
+        "icon": "scissor",
+        "label": "Пропитка\nи защита"
+      },
+      {
+        "icon": "polishing",
+        "label": "Полировка"
+      },
+      {
+        "icon": "heart",
+        "label": "Финальная\nпроверка"
+      }
+    ]
+  }
+}
