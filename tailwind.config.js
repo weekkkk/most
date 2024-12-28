@@ -2,7 +2,11 @@
 export default {
   content: ["./src/**/*.{js,vue,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        phone: "375px",
+      },
+    },
     colors: {
       brand: {
         100: "#0094FF",
