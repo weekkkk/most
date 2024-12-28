@@ -9,7 +9,11 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        phone: "375px",
+      },
+    },
     colors: {
       brand: {
         100: "#0094FF",
