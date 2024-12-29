@@ -85,7 +85,11 @@ export default defineNuxtConfig({
     middleware: "./src/app/middlewares",
   },
   imports: {
-    dirs: ["./src/**/index.ts"],
+    dirs: [
+      "./src/widgets/*/*/index.ts",
+      "./src/entities/*/*/index.ts",
+      "./src/shared/*/index.ts",
+    ],
   },
   modules: ["nuxt-keen-slider"],
   nitro: {

@@ -6,3 +6,5 @@ const SERVICE_API_URL =
 export const $service = $fetch.create({
   baseURL: SERVICE_API_URL,
 });
+
+export * from "./types";
