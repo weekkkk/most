@@ -1,5 +1,1 @@
-/**Модель информации юзера */
-export type FeedbackModal = {
-  Name: string;
-  Phone: string;
-};
+export type { FeedbackDataDto } from "./feedback-data-dto";
