@@ -14,7 +14,7 @@ const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
       'items-center',
       'md:gap-8 max-md:gap-[0.4rem]',
       'whitespace-pre-wrap',
-      'md:text-[5rem]',
+      'md:text-[4rem]',
       'md:leading-none max-md:leading-control',
       'before:inline-flex',
       'md:before:h-[200px] max-md:before:h-8',

@@ -9,7 +9,7 @@ const props = defineProps<{
 <template>
   <ul
     :class="[
-      'inline-flex flex-col justify-center gap-y-10',
+      'inline-flex flex-col justify-center gap-24',
     ]"
   >
     <UiGuaranteesStepListItem
