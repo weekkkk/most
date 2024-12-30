@@ -4,9 +4,9 @@ import IMask from "imask";
 
 const props = defineProps<{
   /**Тип инпута */
-  typeInput: string;
+  type: string;
   /**Заполнитель инпута */
-  placeholderInput: string;
+  placeholder: string;
   /**Контент инпута */
   modelValue: string;
 }>();
@@ -27,7 +27,7 @@ const updateInput = (event) => {
 };
 
 onMounted(() => {
-  if (props.typeInput === "tel") IMask($input.value, maskNumber);
+  if (props.type === "tel") IMask($input.value, maskNumber);
 });
 </script>
 
@@ -36,8 +36,8 @@ onMounted(() => {
     ref="$input"
     :value="modelValue"
     @input="updateInput"
-    :type="typeInput"
-    :placeholder="placeholderInput"
+    :type="type"
+    :placeholder="placeholder"
     class="w-[27.5rem] h-[5rem] max-md:w-[17.25rem] max-md:h-[5rem] rounded-[20rem] leading-[1.2rem] outline-none text-[1rem] font-medium bg-[#F5F5F5] text-center"
   />
 </template>

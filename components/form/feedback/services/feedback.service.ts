@@ -3,13 +3,13 @@ import type { FeedbackDataDto } from "../api/types";
 
 export class Feedback {
   static sendFeedbackForm = async (req: FeedbackDataDto) => {
-    const convertToFormData = new FormData();
-    convertToFormData.append("Name", req.Name);
-    convertToFormData.append("Phone", req.Phone);
+    const formData = new FormData();
+    formData.append("Name", req.Name);
+    formData.append("Phone", req.Phone);
     
     return await $feedback("/", {
       method: "POST",
-      body: convertToFormData,
+      body: formData,
     });
   };
 }
