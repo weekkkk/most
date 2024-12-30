@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import { FeedbackDataDto } from "./api/types";
-import { Feedback } from "./services/feedback.service";
-import { FeedbackService } from "./services/index";
+import { FeedbackDataDto } from "../api/types";
+import { Feedback } from "../services/feedback.service";
+import { FeedbackService } from "../services/index";
 
 /**Имя пользователя */
 const nameUser = ref<string>("");
