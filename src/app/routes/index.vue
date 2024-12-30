@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  // redirect: "/repair/bags",
+  redirect: "/repair/bags",
 });
 </script>
 

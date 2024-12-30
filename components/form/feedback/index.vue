@@ -11,8 +11,6 @@ const nameUser = ref<string>("");
 const phoneUser = ref<string>("");
 
 const sentFeedback = async () => {
-  nameUser.value = "";
-  phoneUser.value = "";
   const data: FeedbackDataDto = {
     Name: nameUser.value,
     Phone: phoneUser.value,
@@ -23,6 +21,8 @@ const sentFeedback = async () => {
   } catch (error) {
     console.error("Ошибка при отправке данных:", error);
   }
+  nameUser.value = "";
+  phoneUser.value = "";
 };
 </script>
 
@@ -55,14 +55,13 @@ const sentFeedback = async () => {
       <form @submit.prevent="sentFeedback" class="flex flex-col items-center">
         <UiInput
           v-model="nameUser"
-          :inputContent="nameUser"
           class="mb-[1rem] max-md:mb-[0.5rem] text-[1rem] max-md:text-[.75rem]"
         />
         <UiInput
           v-model="phoneUser"
           class="mb-[2.5rem] max-md:mb-[.5rem] text-[1rem] max-md:text-[.75rem]"
-          typeInput="tel"
-          placeholderInput="+7- 961 - 777 - 777"
+          type="tel"
+          placeholder="+7- 961 - 777 - 777"
         />
         <UiButton>вызвать курьера</UiButton>
       </form>
