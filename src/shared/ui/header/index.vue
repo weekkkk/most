@@ -8,7 +8,7 @@ const props = defineProps<UiHeaderProps>();
   <header
     :class="[
       'inset-x-0 top-0 flex items-center justify-between',
-      'md:pt-14 max-md:pt-12',
+      'md:pt-14 max-md:pt-8',
       'md:px-14 max-md:px-3',
       'absolute z-50',
     ]"

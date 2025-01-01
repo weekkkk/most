@@ -1,6 +1,14 @@
+<script setup lang="ts">
+const goToStart = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+</script>
 <template>
   <footer
-    class="md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem] md:mt-[22.5rem] max-md:mt-40"
+    class="scroll-smooth md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem] md:mt-[22.5rem] max-md:mt-40"
   >
     <ul
       :class="['grid md:gap-y-4', 'md:grid-cols-3 max-md:grid-cols-1fr_4rem']"
@@ -10,19 +18,29 @@
 
         <ul :class="['flex flex-col gap-1', 'md:mt-8 max-md:mt-3']">
           <li>
-            <a href="#">instagram*</a>
+            <a href="https://www.instagram.com/most.cleans" target="_blank">
+              instagram*
+            </a>
           </li>
           <li>
-            <a href="#">youtube</a>
+            <a href="https://www.youtube.com/@MostCleanMsc" target="_blank">
+              youtube
+            </a>
           </li>
           <li>
-            <a href="#">telegram</a>
+            <a href="tg://resolve?domain=MostClean_manager">telegram</a>
           </li>
         </ul>
       </li>
 
       <li class="w-full md:text-center max-md:col-start-1 max-md:mb-[0.8rem]">
-        политика конф
+        <a
+          href="https://mostclean.ru/privacy.html"
+          target="_blank"
+          class="text-common"
+        >
+          политика конф
+        </a>
       </li>
 
       <li
@@ -32,7 +50,7 @@
 
         <ul class="md:mt-8 max-md:mt-3">
           <li>
-            <a href="#">mostcleanru@gmail.com</a>
+            <a href="mailto:mostcleanru@gmail.com">mostcleanru@gmail.com</a>
           </li>
         </ul>
       </li>
@@ -50,10 +68,13 @@
         ]"
       >
         <div
+          @click.prevent="goToStart()"
           :class="[
             'inline-flex justify-center items-center bg-brand-100 text-default md:text-[2rem] rounded-full leading-control',
             'md:h-20 max-md:h-16',
             'md:w-20 max-md:w-16',
+            'cursor-pointer',
+            'relative z-10',
           ]"
         >
           ап
@@ -67,12 +88,45 @@
       </li>
     </ul>
   </footer>
-  <footer class="fixed bottom-16 inset-x-16 flex justify-between">
-    <nav>
-      <UiButton img="/icons/whatsapp.svg" />
-      <UiButton img="/icons/telegram.svg" />
-    </nav>
 
-    <UiButton img="/icons/phone.svg" />
+  <footer
+    :class="[
+      'fixed',
+      'md:bottom-16 max-md:bottom-3',
+      'md:inset-x-16 max-md:inset-x-3',
+    ]"
+  >
+    <ul class="flex justify-between">
+      <ul class="flex">
+        <li>
+          <a href="https://wa.me/79261234858" target="_blank">
+            <UiButton img="/icons/whatsapp.svg" size="large" />
+          </a>
+        </li>
+        <li>
+          <a href="tg://resolve?domain=MostClean_manager">
+            <UiButton img="/icons/telegram.svg" size="large" />
+          </a>
+        </li>
+      </ul>
+
+      <li>
+        <a href="tel:89261234858">
+          <UiButton img="/icons/phone.svg" size="large" class="max-md:w-full">
+            <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
+            <span class="md:hidden text-default"> позвонить </span>
+          </UiButton>
+        </a>
+      </li>
+    </ul>
   </footer>
 </template>
+
+<style scoped>
+a {
+  transition: 150ms color ease-in-out;
+}
+a:not(:hover, .text-common) {
+  color: #0094ff;
+}
+</style>

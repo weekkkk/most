@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps<{ items: UiNavItemProps[] }>();
+const props = defineProps<{ items: UiNavProps["items"] }>();
 
 const visible = ref(false);
 
@@ -44,8 +44,3 @@ const maxHeight = computed(() => $menu.value?.$el.clientHeight);
     </div>
   </div>
 </template>
-
-<style scoped>
-.menu {
-}
-</style>
