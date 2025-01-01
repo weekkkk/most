@@ -15,7 +15,7 @@ const props = defineProps<UiGuaranteesProps>();
     </main>
 
     <footer :class="['md:mt-28 max-md:mt-4', ' flex justify-center']">
-      <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
+      <UiButton class="max-md:w-full text-[1rem]">обратиться сейчас</UiButton>
     </footer>
   </section>
 </template>
