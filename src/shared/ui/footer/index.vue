@@ -18,19 +18,29 @@ const goToStart = () => {
 
         <ul :class="['flex flex-col gap-1', 'md:mt-8 max-md:mt-3']">
           <li>
-            <a href="#">instagram*</a>
+            <a href="https://www.instagram.com/most.cleans" target="_blank">
+              instagram*
+            </a>
           </li>
           <li>
-            <a href="#">youtube</a>
+            <a href="https://www.youtube.com/@MostCleanMsc" target="_blank">
+              youtube
+            </a>
           </li>
           <li>
-            <a href="#">telegram</a>
+            <a href="tg://resolve?domain=MostClean_manager">telegram</a>
           </li>
         </ul>
       </li>
 
       <li class="w-full md:text-center max-md:col-start-1 max-md:mb-[0.8rem]">
-        политика конф
+        <a
+          href="https://mostclean.ru/privacy.html"
+          target="_blank"
+          class="text-common"
+        >
+          политика конф
+        </a>
       </li>
 
       <li
@@ -40,7 +50,7 @@ const goToStart = () => {
 
         <ul class="md:mt-8 max-md:mt-3">
           <li>
-            <a href="#">mostcleanru@gmail.com</a>
+            <a href="mailto:mostcleanru@gmail.com">mostcleanru@gmail.com</a>
           </li>
         </ul>
       </li>
@@ -81,26 +91,42 @@ const goToStart = () => {
 
   <footer
     :class="[
-      'flex justify-between',
       'fixed',
       'md:bottom-16 max-md:bottom-3',
       'md:inset-x-16 max-md:inset-x-3',
     ]"
   >
-    <nav class="flex">
-      <a href="https://wa.me/79261234858" target="_blank">
-        <UiButton img="/icons/whatsapp.svg" size="large" />
-      </a>
-      <a href="tg://resolve?domain=MostClean_manager">
-        <UiButton img="/icons/telegram.svg" size="large" />
-      </a>
-    </nav>
+    <ul class="flex justify-between">
+      <ul class="flex">
+        <li>
+          <a href="https://wa.me/79261234858" target="_blank">
+            <UiButton img="/icons/whatsapp.svg" size="large" />
+          </a>
+        </li>
+        <li>
+          <a href="tg://resolve?domain=MostClean_manager">
+            <UiButton img="/icons/telegram.svg" size="large" />
+          </a>
+        </li>
+      </ul>
 
-    <a href="tel:89261234858">
-      <UiButton img="/icons/phone.svg" size="large" class="max-md:w-full">
-        <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
-        <span class="md:hidden text-default"> позвонить </span>
-      </UiButton>
-    </a>
+      <li>
+        <a href="tel:89261234858">
+          <UiButton img="/icons/phone.svg" size="large" class="max-md:w-full">
+            <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
+            <span class="md:hidden text-default"> позвонить </span>
+          </UiButton>
+        </a>
+      </li>
+    </ul>
   </footer>
 </template>
+
+<style scoped>
+a {
+  transition: 150ms color ease-in-out;
+}
+a:not(:hover, .text-common) {
+  color: #0094ff;
+}
+</style>
