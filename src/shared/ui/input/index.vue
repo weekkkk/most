@@ -16,8 +16,9 @@ const $input = ref();
 const maskNumber = "+7 (000) 000-00-00";
 
 /**событие для обновления инпута */
-const updateInput = (event: any) => {
-  emit("update:modelValue", event.target.value);
+const updateInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  emit("update:modelValue", target.value);
 };
 
 onMounted(() => {

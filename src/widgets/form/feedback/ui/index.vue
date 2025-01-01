@@ -10,11 +10,12 @@ const user = ref<FeedbackDataDto>({
 
 const sentFeedback = async () => {
   try {
-    const response = await FeedbackService.sendFeedbackForm(user);
+    const response = await FeedbackService.sendFeedbackForm(user.value);
     console.log("Успешно отправлено:", response);
   } catch (error) {
     console.error("Ошибка при отправке данных:", error);
   }
+
   user.value.Name = "";
   user.value.Phone = "";
 };
