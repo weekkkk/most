@@ -25,7 +25,6 @@ const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
       'before:bg-center before:bg-no-repeat before:bg-common',
       'before:rounded-full',
       'before:rounded-full',
-  //    'before:h-[3rem] before:w-[3rem]',
       'max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full',
       'text-center'
     ]"
