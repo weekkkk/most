@@ -12,12 +12,15 @@ const service = useState<GetServiseDataDto | undefined>(route.path);
     <UiBanner v-bind="service.banner" />
 
     <div :class="['flex flex-col', 'md:gap-[22.5rem] max-md:gap-40']">
-      <UiProcess v-bind="service.process" />
+      <UiProcess v-bind="service.process" v-if="service.process" />
 
-      
-      <UiProcess v-bind="service.process" v-if="service.process"/>
-      <UiGuarantees v-bind="service.guarantees" v-else-if="service.guarantees"/>
+      <UiGuarantees
+        v-bind="service.guarantees"
+        v-else-if="service.guarantees"
+      />
+
       <ReviewListWidget />
+
       <ComparisonSubjectWidget />
 
       <FaqListWidget />
