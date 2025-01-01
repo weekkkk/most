@@ -1,38 +1,36 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
-import { FeedbackDataDto } from "../api/types";
-import { Feedback } from "../services/feedback.service";
+import { ref } from "vue";
+import type { FeedbackDataDto } from "../api/types";
 import { FeedbackService } from "../services/index";
 
-/**Имя пользователя */
-const nameUser = ref<string>("");
-
-/**Номер телефона юзера */
-const phoneUser = ref<string>("");
+const user = ref<FeedbackDataDto>({
+  Name: "",
+  Phone: "",
+});
 
 const sentFeedback = async () => {
-  const data: FeedbackDataDto = {
-    Name: nameUser.value,
-    Phone: phoneUser.value,
-  };
   try {
-    const response = await Feedback.sendFeedbackForm(data);
+    const response = await FeedbackService.sendFeedbackForm(user);
     console.log("Успешно отправлено:", response);
   } catch (error) {
     console.error("Ошибка при отправке данных:", error);
   }
-  nameUser.value = "";
-  phoneUser.value = "";
+  user.value.Name = "";
+  user.value.Phone = "";
 };
 </script>
 
 <template>
   <div class="flex justify-center relative">
     <div class="flex flex-col items-center">
-      <img
-        src="/icons/truck.svg"
-        class="w-[10rem] max-md:w-[3rem] h-[10rem] max-md:h-[3rem] mb-[2.5rem] max-md:mb-[1rem]"
-      />
+      <div
+        class="flex justify-center items-center rounded-full bg-common w-[10rem] max-md:w-[3rem] h-[10rem] max-md:h-[3rem] mb-[2.5rem] max-md:mb-[1rem]"
+      >
+        <img
+          src="/icons/truck.svg"
+          class="w-[4.75rem] max-md:w-[1.2rem] h-[4.8rem] max-md:h-[24px]"
+        />
+      </div>
       <h1
         class="text-[6.25rem] max-md:text-[1.75rem] leading-[5rem] max-md:leading-[1.5rem] text-center mb-[1.875rem] max-md:mb-[1rem] w-[70rem] max-md:w-[17.25rem]"
       >
@@ -54,11 +52,12 @@ const sentFeedback = async () => {
       />
       <form @submit.prevent="sentFeedback" class="flex flex-col items-center">
         <UiInput
-          v-model="nameUser"
+          type="text"
+          v-model="user.Name"
           class="mb-[1rem] max-md:mb-[0.5rem] text-[1rem] max-md:text-[.75rem]"
         />
         <UiInput
-          v-model="phoneUser"
+          v-model="user.Phone"
           class="mb-[2.5rem] max-md:mb-[.5rem] text-[1rem] max-md:text-[.75rem]"
           type="tel"
           placeholder="+7- 961 - 777 - 777"

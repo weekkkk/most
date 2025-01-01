@@ -1,7 +1,7 @@
 import { $feedback } from "../api/index";
 import type { FeedbackDataDto } from "../api/types";
 
-export class Feedback {
+export class FeedbackService {
   static sendFeedbackForm = async (req: FeedbackDataDto) => {
     const formData = new FormData();
     formData.append("Name", req.Name);

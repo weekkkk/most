@@ -1,15 +1,9 @@
 <script lang="ts" setup>
 import { computed, defineProps, onMounted, ref } from "vue";
 import IMask from "imask";
+import type { UiInputProps } from "./types";
 
-const props = defineProps<{
-  /**Тип инпута */
-  type: string;
-  /**Заполнитель инпута */
-  placeholder: string;
-  /**Контент инпута */
-  modelValue: string;
-}>();
+const props = defineProps<UiInputProps>();
 
 const emit = defineEmits<{
   (e: "update:modelValue", value: string): void;
@@ -22,7 +16,7 @@ const $input = ref();
 const maskNumber = "+7 (000) 000-00-00";
 
 /**событие для обновления инпута */
-const updateInput = (event) => {
+const updateInput = (event: any) => {
   emit("update:modelValue", event.target.value);
 };
 
