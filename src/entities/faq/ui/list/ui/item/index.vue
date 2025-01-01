@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { LayoutFaqListItemProps } from "./types";
+import type { FaqListItemProps } from "./types";
 
-const props = defineProps<LayoutFaqListItemProps>();
+const props = defineProps<FaqListItemProps>();
 
 const visible = ref(false);
 
@@ -12,7 +12,7 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
 
 <template>
   <li
-    class="md:text-[1.5rem] leading-small py-8 last:pb-0 border-second-50 border-t"
+    class="md:text-[1.5rem] leading-small py-8 last:pb-0 border-second-50 border-t lowercase"
   >
     <header :class="['flex items-center', 'max-md:mb-3']">
       <p class="grow max-md:whitespace-pre-wrap">
