@@ -1,25 +1,7 @@
 <script setup lang="ts">
-import type { LayoutFaqListItemProps } from "./ui/item/types";
-
-const questions: LayoutFaqListItemProps[] = [
-  {
-    question: "кто такие \nMost Clean?",
-    answer: "ответ",
-  },
-  {
-    question: "что еще можно \nпочистить?",
-    answer: "ответ",
-  },
-  {
-    question: "убила свои говнодавы, \nчто делать?",
-    answer:
-      "ну, говнодавы явно побывали в приключении! Несите их к нам, устроим им люкс-отдых — отмоем, освежим, и вернём к жизни лучше, чем были!",
-  },
-  {
-    question: "как вас \nнайти?",
-    answer: "ответ",
-  },
-];
+const { data } = await useAsyncData("faq-random", () =>
+  FaqService.getRandomList()
+);
 </script>
 
 <template>
@@ -36,14 +18,7 @@ const questions: LayoutFaqListItemProps[] = [
       </h2>
     </header>
     <main>
-      <ul>
-        <FaqListItemWidget
-          v-for="(question, index) in questions"
-          :key="index"
-          v-bind="{ ...question }"
-        >
-        </FaqListItemWidget>
-      </ul>
+      <FaqList v-if="data" :items="data" />
     </main>
   </section>
 </template>
