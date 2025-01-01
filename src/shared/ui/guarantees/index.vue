@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UiGuaranteesStepListItemProps } from "./step-list";
+import type { UiGuaranteesStepListItemProps } from "./ui/step-list";
 import type { UiGuaranteesProps } from "./types";
 
 const props = defineProps<UiGuaranteesProps>();

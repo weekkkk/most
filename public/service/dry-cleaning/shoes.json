@@ -6,7 +6,6 @@
     "image": "guarantees/shoes"
   },
   "guarantees": {
-    "image": "repair/shoes",
     "steps": [
       {
         "icon": "magicpen",
