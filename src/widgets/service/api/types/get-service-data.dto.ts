@@ -1,4 +1,5 @@
 export type GetServiseDataDto = {
   banner: UiBannerProps;
-  process: UiProcessProps;
+  process?: UiProcessProps;
+  guarantees?: UiGuaranteesProps;
 };
