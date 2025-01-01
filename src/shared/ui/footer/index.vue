@@ -67,12 +67,29 @@
       </li>
     </ul>
   </footer>
-  <footer class="fixed bottom-16 inset-x-16 flex justify-between">
-    <nav>
-      <UiButton img="/icons/whatsapp.svg" size="large" />
-      <UiButton img="/icons/telegram.svg" size="large" />
+
+  <footer
+    :class="[
+      'flex justify-between',
+      'fixed',
+      'md:bottom-16 max-md:bottom-3',
+      'md:inset-x-16 max-md:inset-x-3',
+    ]"
+  >
+    <nav class="flex">
+      <a href="https://wa.me/79261234858" target="_blank">
+        <UiButton img="/icons/whatsapp.svg" size="large" />
+      </a>
+      <a href="tg://resolve?domain=MostClean_manager">
+        <UiButton img="/icons/telegram.svg" size="large" />
+      </a>
     </nav>
 
-    <UiButton img="/icons/phone.svg" size="large" />
+    <a href="tel:89261234858">
+      <UiButton img="/icons/phone.svg" size="large" class="max-md:w-full">
+        <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
+        <span class="md:hidden text-default"> позвонить </span>
+      </UiButton>
+    </a>
   </footer>
 </template>
