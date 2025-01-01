@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { UiButtonProps } from "./types";
 
-const props = defineProps<UiButtonProps>();
+const props = withDefaults(defineProps<UiButtonProps>(), { size: "medium" });
 
 const emit = defineEmits<{
   (e: "click"): void;
@@ -17,11 +17,16 @@ const emit = defineEmits<{
         'bg-default text-brand-100': color === 'white',
       },
       'max-md:text-[0.7rem]',
-      'md:leading-control max-md:leading-[0.25rem]',
+      {
+        'md:leading-control max-md:leading-[0.25rem]': !img,
+        'inline-flex': img,
+      },
       'rounded-[4.2rem]',
       {
-        'p-[30px] md:px-[80px] max-md:px-12': !img && size !== 'small',
-        'md:p-[18px] max-md:p-[0.4rem]': img,
+        'p-[30px] md:px-[80px] max-md:px-12': !img && size === 'medium',
+        'md:p-[18px] max-md:p-[0.4rem]':
+          img && (size === 'medium' || size === 'small'),
+        'md:p-[30px] max-md:p-[0.4rem]': img && size === 'large',
       },
       { 'cursor-default': readonly },
       'disabled:bg-second-50 disabled:text-common',
@@ -35,7 +40,14 @@ const emit = defineEmits<{
     :readonly="readonly"
   >
     <slot>
-      <img v-if="img" height="24" width="24" :src="img" alt="" />
+      <figure class="h-[24px] w-[24px]">
+        <img
+          class="object-contain w-full h-full"
+          v-if="img"
+          :src="img"
+          alt=""
+        />
+      </figure>
     </slot>
   </button>
 </template>
