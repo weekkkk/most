@@ -8,18 +8,6 @@ const props = defineProps<UiGuaranteesProps>();
 
 <template>
   <section class="md:px-[7.6rem] max-md:px-3">
-    <header class="text-center mb-20">
-      <h2
-        :class="[
-          'md:text-[5rem] max-md:text-[1.75rem]',
-          'md:leading-small max-md:leading-[1.5rem]',
-          'whitespace-pre-wrap',
-        ]"
-      >
-        {{ title }}
-      </h2>
-    </header>
-
     <main
       :class="['flex', 'justify-center']"
     >
