@@ -1,0 +1,1 @@
+export type { UiDeliveryProps } from "./props";
