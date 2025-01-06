@@ -3,14 +3,11 @@ import type { UiGuaranteesStepListItemProps } from "./ui/step-list";
 import type { UiGuaranteesProps } from "./types";
 
 const props = defineProps<UiGuaranteesProps>();
-
 </script>
 
 <template>
   <section class="md:px-[7.6rem] max-md:px-3">
-    <main
-      :class="['flex', 'justify-center']"
-    >
+    <main :class="['flex', 'justify-center']">
       <UiGuaranteesStepList :list="steps" />
     </main>
 
