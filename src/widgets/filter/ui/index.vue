@@ -20,6 +20,6 @@ onMounted(async () => {
 </script>
 <template>
   <div>
-    <UiFilter :categories="categories" class="mt-[7.5rem]" />
+    <UiFilter :categories="categories" class="mt-[7.5rem] max-md:mt-[3rem]" />
   </div>
 </template>

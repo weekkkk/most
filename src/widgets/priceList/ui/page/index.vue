@@ -8,33 +8,39 @@ const route = useRoute();
 
 const priceLists = ref<GetPriceListDataDto[]>([]);
 
-const getPriceList = async (categoryId: string) => {
+/**Текст поиска */
+const searchText = ref();
+
+const getPriceList = async (categoryId: string, search: string) => {
   try {
-    priceLists.value = await PriceListService.getPriceList(categoryId);
-    console.log(priceLists.value);
+    priceLists.value = await PriceListService.getPriceList(categoryId, search);
   } catch (e) {
     console.log(e);
   }
 };
 
 watch(
-  () => route.query,
+  () => [route.query, searchText.value],
   () => {
-    getPriceList(String(route.query.category));
-  }
+    getPriceList(String(route.query.category), searchText.value);
+  },
+  { immediate: true }
 );
 </script>
 <template>
-  <div class="flex flex-col justify-center ml-[3.5rem] mr-[3.5rem]">
+  <div
+    class="flex flex-col justify-center ml-[3.5rem] max-md:ml-[.75rem] mr-[3.5rem] max-md:mr-[.75rem]"
+  >
     <div>
       <h1
-        class="text-[9rem] max-md:text-[2.5rem] text-center leading-[6rem] max-md:leading-[2rem] max-md:w-[17.25rem] max-md:h-[8rem]"
+        class="text-[9rem] max-md:text-[2.5rem] text-center leading-[6rem] max-md:leading-[2rem] max-md:h-[8rem]"
       >
-        широкий выбор услуг по приятным ценам
+        широкий выбор услуг<br />
+        по приятным ценам
       </h1>
-      <div class="flex items-center justify-between">
-        <FilterWidget class="mb-[7.5rem]" />
-        <SearchWidget />
+      <div class="flex items-center justify-between max-md:block">
+        <FilterWidget class="mb-[7.5rem] max-md:mb-[2rem]" />
+        <SearchWidget @search="searchText = $event" />
       </div>
       <UiList :priceLists="priceLists" />
     </div>
