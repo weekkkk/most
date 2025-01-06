@@ -2,7 +2,6 @@
 
 <template>
   <!-- <LayoutHeaderWidget /> -->
-  <!-- <NuxtPage /> -->
-  <PriceListPage />
+  <NuxtPage />
   <!-- <LayoutFooterWidget /> -->
 </template>
