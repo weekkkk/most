@@ -36,6 +36,24 @@ const startNavItems: UiHeaderProps["startNavItems"] = [
       },
     ],
   },
+  {
+    label: "обувь",
+    to: "/complex",
+    children: [
+      {
+        label: "туфли",
+        to: "shoes",
+      },
+      {
+        label: "кроссовки",
+        to: "sneakers",
+      },
+      {
+        label: "ботинки",
+        to: "boots",
+      },
+    ],
+  },
   // {
   //   header: "обувь",
   //   items,
