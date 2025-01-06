@@ -1,12 +1,11 @@
 {
   "banner": {
-    "title": "химчистка, ремонт\nи реставрация туфлей",
+    "title": "химчистка, ремонт\nи реставрация\nботинок",
     "description": "в нашем мире, где внешний вид играет важную роль, мы стремимся предоставить вам лучшие услуги по уходу за вашими любимыми вещами",
     "actionText": "почистить",
-    "image": "guarantees/sneakers"
+    "image": "complex/boots"
   },
   "guarantees": {
-    "image": "repair/shoes",
     "steps": [
       {
         "icon": "magicpen",
