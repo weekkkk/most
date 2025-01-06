@@ -5,6 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-  <!-- <ServicePage /> -->
-  <PriceListPage />
+  <ServicePage />
 </template>

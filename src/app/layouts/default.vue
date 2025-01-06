@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <!-- <LayoutHeaderWidget /> -->
+  <LayoutHeaderWidget />
   <NuxtPage />
-  <!-- <LayoutFooterWidget /> -->
+  <LayoutFooterWidget />
 </template>
