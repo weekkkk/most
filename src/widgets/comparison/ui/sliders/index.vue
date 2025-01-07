@@ -2,7 +2,11 @@
 const route = useRoute();
 
 const { data, error } = await useAsyncData("comparation-sliders", () =>
-  ComparisonService.getByPageId(route.path)
+  ComparisonService.getByPageId(
+    process.env.NODE_ENV === "development"
+      ? route.path
+      : route.path.replace("most", "")
+  )
 );
 </script>
 
