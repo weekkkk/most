@@ -8,20 +8,20 @@
   "guarantees": {
     "steps": [
       {
-        "icon": "magicpen",
-        "label": "вернём кроссовкам\nнадлежащий вид"
+        "icon": "magic-pencil",
+        "label": "отполируем\nдо блеска"
       },
       {
-        "icon": "iron",
-        "label": "уберём заломы\nи царапины"
+        "icon": "scissor",
+        "label": "починим каблуки\nи подошву"
       },
       {
-        "icon": "swap",
-        "label": "заменим изношенные\nзадники"
+        "icon": "brush",
+        "label": "обновим цвет\nи текстуру кожи"
       },
       {
-        "icon": "drop-glitter",
-        "label": "вернем белизну\nподошве"
+        "icon": "restoration",
+        "label": "реставрируем\nизношенные детали"
       }
     ]
   }
