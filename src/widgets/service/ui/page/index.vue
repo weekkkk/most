@@ -21,7 +21,7 @@ const service = useState<GetServiseDataDto | undefined>(route.path);
 
       <ReviewListWidget />
 
-      <ComparisonSubjectWidget />
+      <ComparisonSlidersWidget />
 
       <FaqListWidget />
     </div>

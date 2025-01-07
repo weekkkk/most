@@ -6,7 +6,7 @@ const bannerImage = "cleaning";
 const bannerActionText = "вызвать курьера";
 
 const processTitle = "искусство ухода за вашими любимыми вещами";
-const processImage = "main/2x";
+const processImage = "cleaning";
 const processStartSteps: UiProcessProps["startSteps"] = [
   {
     icon: "fire",
@@ -73,7 +73,7 @@ const processEndSteps: UiProcessProps["endSteps"] = [
       :endSteps="processEndSteps"
     />
     <ReviewListWidget />
-    <ComparisonSubjectWidget />
+    <ComparisonSlidersWidget />
     <FaqListWidget />
   </div>
 </template>

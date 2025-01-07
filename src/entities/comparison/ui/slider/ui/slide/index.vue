@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import type { ComparisonSliderSlideProps } from "./types";
+const props = defineProps<ComparisonSliderSlideProps>();
+</script>
+
 <template>
   <figure
     :class="[
@@ -6,7 +11,7 @@
     ]"
   >
     <img
-      src="/imgs/slide.jpg"
+      :src="`data:image/png;base64,${image}`"
       class="w-full h-full object-cover max-md:absolute"
     />
   </figure>
