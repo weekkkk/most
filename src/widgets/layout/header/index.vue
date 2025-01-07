@@ -57,14 +57,10 @@ const endNavItems: UiHeaderProps["endNavItems"] = [
     label: "доставка",
     to: "/delivery",
   },
-  // {
-  //   header: "Доставка",
-  //   items,
-  // },
-  // {
-  //   header: "Контакты",
-  //   items,
-  // },
+  {
+    label: "контакты",
+    to: "/contacts",
+  },
 ];
 </script>
 
