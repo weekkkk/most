@@ -54,7 +54,7 @@ const dotHelper = computed(() =>
         'md:bottom-14 max-md:bottom-2',
       ]"
     >
-      <li v-for="(_slide, idx) in dotHelper" :key="idx">
+      <li class="inline-flex" v-for="(_slide, idx) in dotHelper" :key="idx">
         <UiButton
           style="padding: 0"
           @click="slider.moveToIdx(idx)"

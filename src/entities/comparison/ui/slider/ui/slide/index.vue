@@ -7,7 +7,7 @@ const props = defineProps<ComparisonSliderSlideProps>();
   <figure
     :class="[
       'keen-slider__slide',
-      'md:h-[45rem] max-md:pb-[calc((175/345)*100%)] max-md:relative',
+      'h-[45rem] max-2xl:h-[35.35rem] max-md:h-auto max-md:pb-[calc((175/(345/100))*1%)] max-md:relative',
     ]"
   >
     <img
