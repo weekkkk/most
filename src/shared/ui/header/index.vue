@@ -8,13 +8,17 @@ const props = defineProps<UiHeaderProps>();
   <header
     :class="[
       'inset-x-0 top-0 flex items-center justify-between',
-      'md:pt-14 max-md:pt-8',
-      'md:px-14 max-md:px-3',
+      'md:pt-[70px] max-md:pt-8',
+      'md:px-[70px] max-md:px-3',
       'absolute z-50',
     ]"
   >
     <UiNav class="max-md:hidden w-full" :items="startNavItems" />
-    <img src="/icons/logo.svg" alt="Logo" />
+    <img
+      src="/icons/logo.svg"
+      alt="Logo"
+      :class="['h-[1.7rem] max-2xl:h-[1.187rem] max-md:h-[0.95rem]']"
+    />
     <UiNav class="max-md:hidden w-full" :items="endNavItems" right />
     <UiBurder
       class="hidden max-md:inline-block"

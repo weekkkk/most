@@ -18,10 +18,10 @@ const bgImg = computed(
     :class="[
       'inline-flex',
       'items-center',
-      'md:gap-8 max-md:gap-[0.4rem]',
+      'md:gap-4 max-md:gap-[0.4rem]',
       'whitespace-pre-wrap',
-      'md:text-[2rem]',
-      'md:leading-[1.5rem] max-md:leading-control',
+      'text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem]',
+      'leading-[1.5rem] max-2xl:leading-small max-md:leading-small',
       'before:inline-flex',
       'md:before:h-[80px] max-md:before:h-8',
       'md:before:w-[80px] max-md:before:w-8',
@@ -34,7 +34,12 @@ const bgImg = computed(
     ]"
   >
     <slot>
-      {{ label }}
+      <span class="max-md:hidden">
+        {{ label }}
+      </span>
+      <span class="md:hidden">
+        {{ mdLabel || label }}
+      </span>
     </slot>
   </li>
 </template>

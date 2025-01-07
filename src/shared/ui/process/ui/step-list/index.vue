@@ -8,7 +8,7 @@ const props = defineProps<UiProcessStepListProps>();
   <ul
     :class="[
       'inline-flex flex-col',
-      'md:gap-[6.5rem] max-md:gap-8',
+      'gap-[6.5rem] max-2xl:gap-20 max-md:gap-8',
       { 'items-start': !right, 'items-end': right },
     ]"
   >

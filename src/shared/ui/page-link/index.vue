@@ -4,22 +4,38 @@ import type { UiPageLinkProps } from "./types";
 const props = defineProps<UiPageLinkProps>();
 
 const $btn = ref<HTMLButtonElement>();
+
+const width = computed(() => {
+  const width = $btn.value?.getBoundingClientRect().width;
+  if (!width) return;
+  return Math.ceil(width);
+});
 </script>
 
 <template>
   <li
-    class="max-md:text-[0.7rem] page_link list-none inline-flex flex-col items-start"
-    :class="{ group: children }"
+    :class="[
+      'page_link',
+      'list-none inline-flex flex-col items-start',
+      'max-2xl:text-[0.7rem] max-md:text-[0.7rem]',
+      { group: children },
+    ]"
   >
     <component
       :is="children ? 'button' : 'a'"
       v-bind="children ? {} : { href: to }"
       ref="$btn"
-      class="page_link-header text-left bg-brand-100 text-default md:p-[20px] max-md:p-3 md:leading-control max-md:leading-[0.25rem] md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]"
-      :class="{
-        'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0':
-          children,
-      }"
+      :class="[
+        'page_link-header text-left bg-brand-100 text-default',
+        'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
+        'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
+        'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
+        'md:p-[20px] max-md:p-3',
+        {
+          'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0':
+            children,
+        },
+      ]"
     >
       <slot name="header" v-bind="{ label }">
         {{ label }}
@@ -61,7 +77,7 @@ const $btn = ref<HTMLButtonElement>();
   transition-duration: calc(v-bind("children?.length") * 100ms + 25ms);
 }
 .page_link .page_link-header {
-  width: calc(v-bind("$btn?.offsetWidth") * 1px);
+  width: calc(v-bind(width) * 1px);
   transition-delay: calc(v-bind("children?.length") * 100ms + 25ms - 75ms);
 }
 </style>

@@ -8,15 +8,33 @@ const goToStart = () => {
 </script>
 <template>
   <footer
-    class="scroll-smooth md:px-14 max-md:px-3 md:text-[1.5rem] leading-small md:pb-20 max-md:pb-[7.75rem] md:mt-[22.5rem] max-md:mt-40"
+    :class="[
+      'md:px-14 max-md:px-3',
+      'md:pb-[14.2rem] max-md:pb-[7.75rem]',
+      'md:mt-[22.5rem] max-md:mt-40',
+      'text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem]',
+      'leading-control max-2xl:leading-small max-md:leading-small',
+    ]"
   >
     <ul
-      :class="['grid md:gap-y-4', 'md:grid-cols-3 max-md:grid-cols-1fr_4rem']"
+      :class="['grid md:gap-y-20', 'md:grid-cols-3 max-md:grid-cols-1fr_4rem']"
     >
-      <li class="w-full max-md:col-start-1 max-md:col-end-2 max-md:mb-[2.4rem]">
+      <li
+        :class="[
+          'w-full',
+          'max-md:col-start-1 max-md:col-end-2',
+          'max-md:mb-[1.5rem]',
+        ]"
+      >
         мы в интернете
 
-        <ul :class="['flex flex-col gap-1', 'md:mt-8 max-md:mt-3']">
+        <ul
+          :class="[
+            'flex flex-col',
+            'md:gap-1 max-md:gap-[0.4rem]',
+            'md:mt-8 max-md:mt-[0.7rem]',
+          ]"
+        >
           <li>
             <a href="https://www.instagram.com/most.cleans" target="_blank">
               instagram*
@@ -33,7 +51,7 @@ const goToStart = () => {
         </ul>
       </li>
 
-      <li class="w-full md:text-center max-md:col-start-1 max-md:mb-[0.8rem]">
+      <li class="w-full md:text-center max-md:col-start-1 max-md:mb-[0.9rem]">
         <a
           href="https://mostclean.ru/privacy.html"
           target="_blank"
@@ -74,7 +92,7 @@ const goToStart = () => {
             'md:h-20 max-md:h-16',
             'md:w-20 max-md:w-16',
             'cursor-pointer',
-            'relative z-10',
+            'relative md:z-10',
           ]"
         >
           ап
@@ -82,7 +100,7 @@ const goToStart = () => {
       </li>
 
       <li
-        class="w-full md:justify-end text-right flex items-center max-md:col-start-1 max-md:col-end-3 max-md:row-start-4 max-md:mb-[0.8rem]"
+        class="w-full md:justify-end text-right flex items-center max-md:col-start-1 max-md:col-end-3 max-md:row-start-4 max-md:mb-[0.9rem]"
       >
         c в круге 2024
       </li>
@@ -110,8 +128,8 @@ const goToStart = () => {
         </li>
       </ul>
 
-      <li>
-        <a href="tel:89261234858">
+      <li class="max-md:w-full">
+        <a href="tel:89261234858" class="max-md:w-full">
           <UiButton img="icons/phone.svg" size="large" class="max-md:w-full">
             <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
             <span class="md:hidden text-default"> позвонить </span>

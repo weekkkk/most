@@ -5,7 +5,8 @@ const bannerDescription =
 const bannerImage = "cleaning";
 const bannerActionText = "вызвать курьера";
 
-const processTitle = "искусство ухода за вашими любимыми вещами";
+const processTitle = "искусство ухода за вашими\nлюбимыми вещами";
+const processMdTitle = "искусство ухода\nза вашими\nлюбимыми вещами";
 const processImage = "cleaning";
 const processStartSteps: UiProcessProps["startSteps"] = [
   {
@@ -15,10 +16,12 @@ const processStartSteps: UiProcessProps["startSteps"] = [
   {
     icon: "magicpen",
     label: "Детальная\nчистка подошвы",
+    mdLabel: "Детальная чистка\nподошвы",
   },
   {
     icon: "bucket",
     label: "Глубокая чистка\nспец.средствами",
+    mdLabel: "Глубокая чистка\nспециальными средствами",
   },
   {
     icon: "drop",
@@ -62,18 +65,27 @@ const processEndSteps: UiProcessProps["endSteps"] = [
     :actionText="bannerActionText"
   />
   <div
-    class="flex flex-col md:mt-[15rem] max-md:mt-[5rem] md:gap-[22.5rem] max-md:gap-[10rem]"
+    :class="[
+      'flex flex-col',
+      'mt-[15rem] max-2xl:mt-[10rem] max-md:mt-[5rem]',
+      'gap-[22.5rem] max-2xl:gap-[15rem] max-md:gap-[10rem]',
+    ]"
   >
     <FeedbackFormWidget />
 
     <UiProcess
       :title="processTitle"
+      :md-title="processMdTitle"
       :image="processImage"
       :startSteps="processStartSteps"
       :endSteps="processEndSteps"
+      noFooter
     />
+
     <ReviewListWidget />
+
     <ComparisonSlidersWidget />
+
     <FaqListWidget />
   </div>
 </template>

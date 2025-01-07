@@ -14,7 +14,12 @@ const itemClasses = [
 </script>
 
 <template>
-  <div class="max-md:hidden grid grid-cols-4 grid-rows-[22.5rem_22.5rem] gap-8">
+  <div
+    :class="[
+      'max-md:hidden grid grid-cols-4 gap-4',
+      'grid-rows-[22.5rem_22.5rem] max-2xl:grid-rows-[15.6rem_15.6rem]',
+    ]"
+  >
     <ReviewListItem
       v-for="({ id, ...rest }, index) in items"
       :key="id"
@@ -32,7 +37,7 @@ const itemClasses = [
           :key="id"
           :class="itemClasses[index]"
         >
-          <ReviewListItem v-bind="rest" class="h-52 w-[8.4rem]" />
+          <ReviewListItem v-bind="rest" class="h-[16.1rem] w-[10.8rem]" />
         </div>
       </UiSlider>
     </ClientOnly>

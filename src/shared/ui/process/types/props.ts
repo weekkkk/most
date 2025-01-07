@@ -5,7 +5,9 @@ type StepList = [Step, Step, Step, Step, Step];
 
 export type UiProcessProps = {
   title: string;
+  mdTitle: string;
   image: string;
   startSteps: StepList;
   endSteps: StepList;
+  noFooter?: boolean;
 };
