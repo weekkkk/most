@@ -40,7 +40,7 @@ const $btn = ref<HTMLButtonElement>();
               class="text-left hover:text-default transition-colors w-full md:px-[20px] max-md:px-3 py-[5px]"
             >
               <slot v-bind="{ ...child, to: `${to}/${child.to}` }">
-                <NuxtLink :to="`${to}/${child.to}`" :prefetch="false">
+                <NuxtLink :to="`${to}/${child.to}`">
                   {{ child.label }}
                 </NuxtLink>
               </slot>

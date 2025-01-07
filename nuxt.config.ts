@@ -1,3 +1,24 @@
+import fs from "fs";
+import path from "path";
+
+const getFilesFromDirectory = (dir: string) => {
+  let results: string[] = [];
+  const list = fs.readdirSync(dir);
+
+  list.forEach((file) => {
+    file = path.resolve(dir, file);
+    const stat = fs.statSync(file);
+
+    if (stat && stat.isDirectory()) {
+      results = results.concat(getFilesFromDirectory(file)); // Рекурсивно обрабатываем папки
+    } else {
+      results.push(file); // Добавляем файл в список
+    }
+  });
+
+  return results;
+};
+
 const formatComponentName = (
   pascalName: string,
   postfix: string = "",
@@ -94,5 +115,24 @@ export default defineNuxtConfig({
   modules: ["nuxt-keen-slider"],
   app: {
     baseURL: "/most/",
+  },
+  runtimeConfig: {
+    public: {
+      myData: {},
+    },
+  },
+  hooks: {
+    "build:before": () => {
+      const publicDir = path.resolve(__dirname, "public/service"); // Путь к папке public
+      const files = getFilesFromDirectory(publicDir);
+
+      // Записываем каждый файл в process.env
+      files.forEach((filePath) => {
+        const fileContent = fs.readFileSync(filePath, "utf-8");
+        const relativePath = path.relative(publicDir, filePath); // Относительный путь к файлу
+        process.env[relativePath.replace(/[\/\\]/g, "_")] = fileContent;
+        console.log(relativePath);
+      });
+    },
   },
 });
