@@ -14,9 +14,8 @@ const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
       'items-center',
       'md:gap-8 max-md:gap-[0.4rem]',
       'whitespace-pre-wrap',
-      'text-[1.75rem]',
-      'md:text-[5rem]',
-      'md:leading-none max-md:leading-control',
+      'md:text-[5rem] max-md:text-[1.75rem]',
+      'md:leading-none max-md:leading-[1.5rem]',
       'before:inline-flex',
       'md:before:h-[10rem] max-md:before:h-[3rem]',
       'md:before:w-[10rem] max-md:before:w-[3rem]',
@@ -26,7 +25,7 @@ const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
       'before:rounded-full',
       'before:rounded-full',
       'max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full',
-      'text-center'
+      'text-center',
     ]"
   >
     <slot>

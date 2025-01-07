@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { UiGuaranteesStepListItemProps } from "./ui/step-list";
 import type { UiGuaranteesProps } from "./types";
 
 const props = defineProps<UiGuaranteesProps>();
@@ -11,7 +10,7 @@ const props = defineProps<UiGuaranteesProps>();
       <UiGuaranteesStepList :list="steps" />
     </main>
 
-    <footer :class="['md:mt-28 max-md:mt-4', ' flex justify-center']">
+    <footer :class="['md:mt-[6.75rem] max-md:mt-8', 'flex justify-center']">
       <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
     </footer>
   </section>

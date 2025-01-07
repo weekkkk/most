@@ -8,16 +8,23 @@ const $btn = ref<HTMLButtonElement>();
 
 <template>
   <li
-    class="max-md:text-[0.7rem] page_link group list-none inline-flex flex-col items-start"
+    class="max-md:text-[0.7rem] page_link list-none inline-flex flex-col items-start"
+    :class="{ group: children }"
   >
-    <button
+    <component
+      :is="children ? 'button' : 'a'"
+      v-bind="children ? {} : { href: to }"
       ref="$btn"
-      class="page_link-header group-hover:w-full text-left bg-brand-100 text-default md:p-[20px] max-md:p-3 md:leading-control max-md:leading-[0.25rem] md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem] group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0"
+      class="page_link-header text-left bg-brand-100 text-default md:p-[20px] max-md:p-3 md:leading-control max-md:leading-[0.25rem] md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]"
+      :class="{
+        'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0':
+          children,
+      }"
     >
       <slot name="header" v-bind="{ label }">
         {{ label }}
       </slot>
-    </button>
+    </component>
 
     <div v-if="children" class="w-full" :class="{ 'max-h-0': absolute }">
       <div
