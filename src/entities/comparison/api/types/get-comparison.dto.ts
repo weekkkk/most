@@ -1,4 +1,5 @@
 export type GetComparisonDto = {
-  beforeImages: string[];
-  afterImages: string[];
+  id: string;
+  beforeImage: string;
+  afterImage: string;
 };

@@ -6,7 +6,11 @@ const props = withDefaults(defineProps<UiProcessStepListItemProps>(), {
   right: 0,
 });
 
-const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
+const config = useRuntimeConfig();
+
+const bgImg = computed(
+  () => `url(${config.app.baseURL}icons/${props.icon}.svg)`
+);
 </script>
 
 <template>

@@ -92,7 +92,7 @@ export default defineNuxtConfig({
     ],
   },
   modules: ["nuxt-keen-slider"],
-  nitro: {
-    preset: "static",
+  app: {
+    baseURL: "/most/",
   },
 });

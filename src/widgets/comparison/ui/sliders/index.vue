@@ -1,12 +1,18 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data, error } = await useAsyncData("comparation-sliders", () =>
-  ComparisonService.getByPageId(
-    process.env.NODE_ENV === "development"
-      ? route.path
-      : route.path.replace("most", "")
-  )
+const { data, error } = await useAsyncData("comparation-sliders", () => {
+  console.log(route.path);
+
+  return ComparisonService.getByPageId(route.path);
+});
+
+const beforeImages = computed(() =>
+  data.value?.map(({ beforeImage }) => beforeImage)
+);
+
+const afterImages = computed(() =>
+  data.value?.map(({ afterImage }) => afterImage)
 );
 </script>
 
@@ -22,10 +28,10 @@ const { data, error } = await useAsyncData("comparation-sliders", () =>
         сравни
       </h2>
     </header>
-    <main v-if="data">
-      <ComparisonSlider :images="data.beforeImages" />
+    <main v-if="afterImages && beforeImages && !error">
+      <ComparisonSlider :images="beforeImages" />
 
-      <ComparisonSlider :images="data.afterImages" />
+      <ComparisonSlider :images="afterImages" />
     </main>
 
     <main v-else>

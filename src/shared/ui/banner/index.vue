@@ -2,6 +2,12 @@
 import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
+
+const config = useRuntimeConfig();
+
+const imgSrc = computed(
+  () => `${config.app.baseURL}imgs/banners/${props.image}.png`
+);
 </script>
 
 <template>
@@ -46,10 +52,6 @@ const props = defineProps<UiBannerProps>();
       <UiButton> {{ actionText }} </UiButton>
     </div>
 
-    <img
-      class="object-cover w-full h-full"
-      :src="`/imgs/banners/${image}.png`"
-      alt=""
-    />
+    <img class="object-cover w-full h-full" :src="imgSrc" alt="" />
   </section>
 </template>

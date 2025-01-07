@@ -11,7 +11,7 @@ const [container, slider] = useKeenSlider({
 });
 
 const dotHelper = computed(() =>
-  slider.value
+  slider.value?.track.details
     ? [...Array(slider.value.track.details.slides.length).keys()]
     : []
 );
@@ -29,7 +29,7 @@ const dotHelper = computed(() =>
       v-if="slider"
       :disabled="!current"
       @click="slider.prev()"
-      img="/icons/arrow-left.svg"
+      img="icons/arrow-left.svg"
       :class="[
         'absolute top-1/2 -translate-y-1/2 disabled:bg-common',
         'md:left-14 max-md:left-0',
@@ -40,7 +40,7 @@ const dotHelper = computed(() =>
       v-if="slider"
       :disabled="dotHelper.at(-1) === current"
       @click="slider.next()"
-      img="/icons/arrow-right.svg"
+      img="icons/arrow-right.svg"
       :class="[
         'absolute top-1/2 -translate-y-1/2 right-14 disabled:bg-common',
         'md:right-14 max-md:right-0',

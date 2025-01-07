@@ -100,19 +100,19 @@ const goToStart = () => {
       <ul class="flex">
         <li>
           <a href="https://wa.me/79261234858" target="_blank">
-            <UiButton img="/icons/whatsapp.svg" size="large" />
+            <UiButton img="icons/whatsapp.svg" size="large" />
           </a>
         </li>
         <li>
           <a href="tg://resolve?domain=MostClean_manager">
-            <UiButton img="/icons/telegram.svg" size="large" />
+            <UiButton img="icons/telegram.svg" size="large" />
           </a>
         </li>
       </ul>
 
       <li>
         <a href="tel:89261234858">
-          <UiButton img="/icons/phone.svg" size="large" class="max-md:w-full">
+          <UiButton img="icons/phone.svg" size="large" class="max-md:w-full">
             <span class="max-md:hidden text-default"> 8-926-123-48-58 </span>
             <span class="md:hidden text-default"> позвонить </span>
           </UiButton>

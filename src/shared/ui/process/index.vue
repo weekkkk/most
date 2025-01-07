@@ -18,6 +18,12 @@ const _endSteps = computed<UiProcessStepListProps["steps"]>(() =>
     right: ms[i],
   }))
 );
+
+const config = useRuntimeConfig();
+
+const imgSrc = computed(
+  () => `${config.app.baseURL}imgs/process/${props.image}.png`
+);
 </script>
 
 <template>
@@ -48,7 +54,7 @@ const _endSteps = computed<UiProcessStepListProps["steps"]>(() =>
         >
           <img
             :class="['object-cover w-full h-full', 'max-md:scale-[1.2]']"
-            :src="`/imgs/process/${image}.png`"
+            :src="imgSrc"
             alt=""
           />
         </figure>

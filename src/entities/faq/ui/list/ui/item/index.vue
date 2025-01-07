@@ -24,7 +24,7 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
       <UiButton
         @click="visible = !visible"
         :class="{ 'rotate-45 bg-common hover:bg-second-100': visible }"
-        img="/icons/open.svg"
+        img="icons/open.svg"
       />
     </header>
 

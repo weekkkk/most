@@ -8,6 +8,10 @@ const emit = defineEmits<{
 }>();
 
 const slots = useSlots();
+
+const config = useRuntimeConfig();
+
+const imgSrc = computed(() => `${config.app.baseURL}${props.img}`);
 </script>
 
 <template>
@@ -44,7 +48,7 @@ const slots = useSlots();
     :readonly="readonly"
   >
     <figure v-if="img" class="h-[24px] w-[24px]">
-      <img class="object-contain w-full h-full" :src="img" alt="" />
+      <img class="object-contain w-full h-full" :src="imgSrc" alt="" />
     </figure>
     <slot />
   </button>
