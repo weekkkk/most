@@ -12,7 +12,7 @@ const bgImg = computed(() => `url(/icons/${props.icon}.svg)`);
       'inline-flex',
       'flex-col',
       'items-center',
-      'md:gap-8 max-md:gap-[0.4rem]',
+      'md:gap-10 max-md:gap-4',
       'whitespace-pre-wrap',
       'md:text-[5rem] max-md:text-[1.75rem]',
       'md:leading-none max-md:leading-[1.5rem]',
