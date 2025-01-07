@@ -1,23 +1,31 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import type { FeedbackDataDto } from "../api/types";
-import { FeedbackService } from "../services/index";
-
-const user = ref<FeedbackDataDto>({
+const user = reactive<FeedbackDataDto>({
   Name: "",
   Phone: "",
 });
 
+const disabled = computed(() => !(user.Name && user.Phone));
+const showDisabled = ref(false);
+const isLoading = ref(false);
+
 const sentFeedback = async () => {
+  if (disabled.value) {
+    showDisabled.value = true;
+    return;
+  }
+
   try {
-    const response = await FeedbackService.sendFeedbackForm(user.value);
+    isLoading.value = true;
+    const response = await FeedbackService.sendFeedbackForm(user);
     console.log("Успешно отправлено:", response);
   } catch (error) {
     console.error("Ошибка при отправке данных:", error);
+  } finally {
+    isLoading.value = false;
   }
 
-  user.value.Name = "";
-  user.value.Phone = "";
+  user.Name = "";
+  user.Phone = "";
 };
 </script>
 
@@ -56,14 +64,20 @@ const sentFeedback = async () => {
           type="text"
           v-model="user.Name"
           class="mb-[1rem] max-md:mb-[0.5rem] text-[1rem] max-md:text-[.75rem]"
+          placeholder="Иван Иванов"
         />
         <UiInput
           v-model="user.Phone"
-          class="mb-[2.5rem] max-md:mb-[.5rem] text-[1rem] max-md:text-[.75rem]"
+          class="mb-[2.5rem] max-md:mb-[1rem] text-[1rem] max-md:text-[.75rem]"
           type="tel"
-          placeholder="+7- 961 - 777 - 777"
+          placeholder="+7 (000) 000-00-00"
         />
-        <UiButton>вызвать курьера</UiButton>
+        <UiButton
+          class="max-md:w-full"
+          :disabled="(showDisabled && disabled) || isLoading"
+        >
+          {{ !isLoading ? "вызвать курьера" : "отправка формы..." }}
+        </UiButton>
       </form>
       <img
         src="/icons/man.svg"

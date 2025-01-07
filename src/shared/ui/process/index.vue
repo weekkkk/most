@@ -42,15 +42,12 @@ const _endSteps = computed<UiProcessStepListProps["steps"]>(() =>
       <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
         <figure
           :class="[
-            'md:h-[29rem] md:w-[38.5rem]',
-            'max-md:aspect-[1.38] overflow-hidden',
+            'md:min-h-[29rem] md:min-w-[38rem]',
+            'max-md:w-full max-md:md-[calc((250/(345/100)))*1%] overflow-hidden',
           ]"
         >
           <img
-            :class="[
-              'object-cover w-full h-full',
-              'max-md:scale-[1.4] max-md:translate-y-4',
-            ]"
+            :class="['object-cover w-full h-full', 'max-md:scale-[1.2]']"
             :src="`/imgs/process/${image}.png`"
             alt=""
           />

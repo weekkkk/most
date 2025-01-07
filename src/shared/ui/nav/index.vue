@@ -21,6 +21,9 @@ const props = defineProps<UiNavProps>();
         :key="item.label"
         v-bind="{ ...item }"
         :absolute="!noAbsolute"
+        :class="{
+          'items-end': right && col,
+        }"
       />
     </ul>
   </nav>

@@ -1,13 +1,9 @@
 <script setup lang="ts">
 const startNavItems: UiHeaderProps["startNavItems"] = [
-  // {
-  //   header: "Химчистка",
-  //   items,
-  // },
-  // {
-  //   header: "ремонт",
-  //   items,
-  // },
+  {
+    label: "химчистка",
+    to: "/",
+  },
   {
     label: "ремонт",
     to: "/repair",
@@ -54,10 +50,6 @@ const startNavItems: UiHeaderProps["startNavItems"] = [
       },
     ],
   },
-  // {
-  //   header: "обувь",
-  //   items,
-  // },
 ];
 
 const endNavItems: UiHeaderProps["endNavItems"] = [
