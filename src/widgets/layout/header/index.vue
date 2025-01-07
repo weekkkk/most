@@ -53,10 +53,10 @@ const startNavItems: UiHeaderProps["startNavItems"] = [
 ];
 
 const endNavItems: UiHeaderProps["endNavItems"] = [
-  // {
-  //   header: "Цены",
-  //   items,
-  // },
+  {
+    label: "доставка",
+    to: "/delivery",
+  },
   // {
   //   header: "Доставка",
   //   items,
