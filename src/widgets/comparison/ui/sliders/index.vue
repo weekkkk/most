@@ -1,11 +1,9 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data, error } = await useAsyncData("comparation-sliders", () => {
-  console.log(route.path);
-
-  return ComparisonService.getByPageId(route.path);
-});
+const { data, error } = await useAsyncData("comparation-sliders", () =>
+  ComparisonService.getByPageId(route.path)
+);
 
 const beforeImages = computed(() =>
   data.value?.map(({ beforeImage }) => beforeImage)

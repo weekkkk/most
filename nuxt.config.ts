@@ -113,9 +113,6 @@ export default defineNuxtConfig({
     ],
   },
   modules: ["nuxt-keen-slider"],
-  app: {
-    baseURL: "/most/",
-  },
   runtimeConfig: {
     public: {
       myData: {},
@@ -123,15 +120,13 @@ export default defineNuxtConfig({
   },
   hooks: {
     "build:before": () => {
-      const publicDir = path.resolve(__dirname, "public/service"); // Путь к папке public
+      const publicDir = path.resolve(__dirname, "public/service");
       const files = getFilesFromDirectory(publicDir);
 
-      // Записываем каждый файл в process.env
       files.forEach((filePath) => {
         const fileContent = fs.readFileSync(filePath, "utf-8");
-        const relativePath = path.relative(publicDir, filePath); // Относительный путь к файлу
+        const relativePath = path.relative(publicDir, filePath);
         process.env[relativePath.replace(/[\/\\]/g, "_")] = fileContent;
-        console.log(relativePath);
       });
     },
   },
