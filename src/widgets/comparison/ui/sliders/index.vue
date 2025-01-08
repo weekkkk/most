@@ -12,6 +12,25 @@ const beforeImages = computed(() =>
 const afterImages = computed(() =>
   data.value?.map(({ afterImage }) => afterImage)
 );
+
+const titleConst = {
+  "/": "сравни",
+
+  "/complex/boots": "сравни",
+  "/complex/shoes": "сравни",
+  "/complex/sneakers": "сравни",
+
+  "/repair/bags": "сравни сумки",
+  "/repair/shoes": "сравни обувь",
+
+  "/restoration/bags": "сравни",
+  "/restoration/shoes": "сравни",
+};
+
+const title = computed(() => {
+  if (!(route.path in titleConst)) return;
+  return titleConst[route.path as keyof typeof titleConst];
+});
 </script>
 
 <template>
@@ -24,7 +43,7 @@ const afterImages = computed(() =>
           'leading-[5rem] max-2xl:leading-[4rem] max-md:leading-[1.5rem]',
         ]"
       >
-        сравни
+        {{ title }}
       </h2>
     </header>
 

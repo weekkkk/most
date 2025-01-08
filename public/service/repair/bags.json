@@ -7,6 +7,7 @@
   },
   "process": {
     "title": "как же мы\nремонтируем сумки",
+    "mdTitle": "как же мы\nремонтируем\nсумки",
     "image": "repair/bags",
     "startSteps": [
       {

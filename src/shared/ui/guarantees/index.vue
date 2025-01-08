@@ -10,7 +10,12 @@ const props = defineProps<UiGuaranteesProps>();
       <UiGuaranteesStepList :list="steps" />
     </main>
 
-    <footer :class="['md:mt-[6.75rem] max-md:mt-8', 'flex justify-center']">
+    <footer
+      :class="[
+        'mt-[6.75rem] max-2xl:mt-[5rem] max-md:mt-8',
+        'flex justify-center',
+      ]"
+    >
       <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
     </footer>
   </section>

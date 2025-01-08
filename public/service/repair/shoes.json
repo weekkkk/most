@@ -7,6 +7,7 @@
   },
   "process": {
     "title": "как же мы\nремонтируем обувь",
+    "mdTitle": "как же мы\nремонтируем\nобувь",
     "image": "repair/shoes",
     "startSteps": [
       {
@@ -23,7 +24,7 @@
       },
       {
         "icon": "drop",
-        "label": "Замена\nдеталей"
+        "label": "Замена деталей"
       },
       {
         "icon": "brush",
@@ -41,11 +42,11 @@
       },
       {
         "icon": "scissor",
-        "label": "Пропитка\nи защита"
+        "label": "Полировка"
       },
       {
         "icon": "polishing",
-        "label": "Полировка"
+        "label": "Пропитка\nи защита"
       },
       {
         "icon": "heart",

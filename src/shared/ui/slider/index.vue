@@ -51,7 +51,7 @@ const dotHelper = computed(() =>
       v-if="dot && slider"
       :class="[
         'absolute left-1/2 -translate-x-1/2 flex gap-2',
-        'md:bottom-14 max-md:bottom-2',
+        'bottom-14 max-2xl:bottom-4 max-md:bottom-2',
       ]"
     >
       <li class="inline-flex" v-for="(_slide, idx) in dotHelper" :key="idx">

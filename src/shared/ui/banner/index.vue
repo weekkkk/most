@@ -31,7 +31,7 @@ const imgSrc = computed(
           '-tracking-[calc(9rem/100)] max-2xl:-tracking-[calc(6rem/100)] max-md:-tracking-[calc(2.5rem/100)]',
           'leading-[6rem] max-2xl:leading-[4.5rem] max-md:leading-[2rem]',
           'md:mb-10 max-md:mb-4',
-          'md:whitespace-pre-wrap',
+          'whitespace-pre-wrap',
         ]"
       >
         {{ title }}
