@@ -30,7 +30,7 @@ const width = computed(() => {
         'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
         'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
         'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
-        'md:p-[20px] max-md:p-3',
+        'md:p-[1rem] max-md:p-3',
         'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0',
       ]"
     >
@@ -47,7 +47,7 @@ const width = computed(() => {
         'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
         'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
         'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
-        'md:p-[20px] max-md:p-3',
+        'md:p-[1rem] max-md:p-3',
       ]"
     >
       <slot name="header" v-bind="{ label }">
@@ -66,7 +66,7 @@ const width = computed(() => {
             :key="index"
           >
             <button
-              class="text-left hover:text-default transition-colors w-full md:px-[20px] max-md:px-3 py-[5px]"
+              class="text-left hover:text-default transition-colors w-full md:px-[1rem] max-md:px-3 py-[0.25rem]"
             >
               <slot v-bind="{ ...child, to: `${to}/${child.to}` }">
                 <NuxtLink :to="`${to}/${child.to}`">

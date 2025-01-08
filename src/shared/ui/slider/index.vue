@@ -60,8 +60,8 @@ const dotHelper = computed(() =>
           @click="slider.moveToIdx(idx)"
           :readonly="current === idx"
           :class="[
-            'md:h-[15px] max-md:h-[0.4rem]',
-            'md:w-[15px] max-md:w-[0.4rem]',
+            'md:h-[0.75rem] max-md:h-[0.4rem]',
+            'md:w-[0.75rem] max-md:w-[0.4rem]',
             { 'bg-second-0': current !== idx },
           ]"
         />
