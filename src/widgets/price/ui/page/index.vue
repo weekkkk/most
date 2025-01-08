@@ -32,12 +32,6 @@ watch(
     class="flex flex-col justify-center ml-[3.5rem] max-md:ml-[.75rem] mr-[3.5rem] max-md:mr-[.75rem]"
   >
     <div>
-      <h1
-        class="text-[9rem] max-md:text-[2.5rem] text-center leading-[6rem] max-md:leading-[2rem] max-md:h-[8rem]"
-      >
-        широкий выбор услуг<br />
-        по приятным ценам
-      </h1>
       <div class="flex items-center justify-between max-md:block">
         <FilterWidget class="mb-[7.5rem] max-md:mb-[2rem]" />
         <SearchWidget @search="searchText = $event" />

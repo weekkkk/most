@@ -1,15 +1,11 @@
 <script setup lang="ts">
-import { nextTick, ref } from "vue";
-
-const emit = defineEmits<{
-  (e: "search", search: string): string;
-}>();
-
 /**Сссылка на инпут */
 const inputRef = ref<HTMLInputElement>();
 
+const route = useRoute();
+
 /**текст поиска */
-const searchText = ref();
+const searchText = computed(() => route.query.name?.toString());
 
 /** Состояние открытого поиска */
 const stateOpenSearch = ref(false);
@@ -31,6 +27,18 @@ const closeSearch = (event: FocusEvent) => {
     stateOpenSearch.value = false;
   }
 };
+
+const search = async ({ target }: Event) => {
+  const name = (target as HTMLInputElement).value || "";
+
+  console.log(name);
+
+  await navigateTo({
+    query: {
+      name,
+    },
+  });
+};
 </script>
 
 <template>
@@ -38,26 +46,32 @@ const closeSearch = (event: FocusEvent) => {
     @focusin="openSearch"
     @focusout="closeSearch"
     :class="[
-      '!p-[1rem] max-md:!p-[.75rem]',
+      '!p-[1.45rem] max-2xl:!p-[1.15rem] max-md:!p-[.65rem]',
+      '!rounded-[2.2rem]',
       {
-        'max-md:!pt-[.75rem] max-md:!pb-[.75rem] !pr-[2rem] max-md:!pr-[1rem] !pl-[2rem] max-md:!pl-[1rem]':
-          stateOpenSearch,
+        '!px-[2rem] max-md:!px-[1rem] max-md:w-full': stateOpenSearch,
       },
-      'flex items-center max-md:mb-[3rem]',
+      'flex items-center',
     ]"
   >
-    <img
-      class="w-[1.5rem] max-md:w-[1.2rem] h-[1.5rem] max-md:h-[1.2rem]"
-      src="/icons/Search.svg"
-      alt=""
-    />
+    <img class="w-[1.5rem] max-md:w-[1.2rem]" src="/icons/Search.svg" alt="" />
 
     <input
       v-if="stateOpenSearch"
       ref="inputRef"
-      v-model="searchText"
-      @input="emit('search', searchText)"
-      class="w-[8.3rem] max-md:w-[12.45rem] text-[2rem] max-md:text-[1rem] leading-[2.4rem] outline-none text-[#fff] ml-[1rem]"
+      :value="searchText"
+      @input="search"
+      :class="[
+        '-my-2',
+        'h-[2rem] max-2xl:h-[1.5rem] max-md:h-[1rem]',
+        'w-[8.3rem] max-md:w-full',
+        'text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem]',
+        'leading-small',
+        'ml-[1rem]',
+        'font-medium',
+        'text-default',
+        'outline-none',
+      ]"
       style="background: none"
       type="text"
     />
