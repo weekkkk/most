@@ -1,1 +1,1 @@
-export type { GetServiseDataDto } from "./get-service-data.dto";
+export type { GetServisePageDataDto } from "./get-service-page-data.dto";

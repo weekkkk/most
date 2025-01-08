@@ -1,1 +1,1 @@
-export { ServiceService } from "./service.service";
+export { ServicePageService } from "./service.service";

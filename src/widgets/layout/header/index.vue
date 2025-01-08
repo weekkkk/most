@@ -54,6 +54,10 @@ const startNavItems: UiHeaderProps["startNavItems"] = [
 
 const endNavItems: UiHeaderProps["endNavItems"] = [
   {
+    label: "цены",
+    to: "/price-list",
+  },
+  {
     label: "доставка",
     to: "/delivery",
   },
