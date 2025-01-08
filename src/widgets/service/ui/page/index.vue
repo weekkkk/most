@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const service = useState<GetServiseDataDto | undefined>(route.path);
+const service = useState<GetServisePageDataDto | undefined>(route.path);
 </script>
 
 <template>

@@ -1,6 +1,6 @@
 export default defineNuxtRouteMiddleware(async (to) => {
   try {
-    const service = await ServiceService.getData(
+    const service = await ServicePageService.getData(
       to.params.service + "",
       to.params.subject + ""
     );
