@@ -21,9 +21,8 @@ const width = computed(() => {
       { group: children },
     ]"
   >
-    <component
-      :is="children ? 'button' : 'a'"
-      v-bind="children ? {} : { href: to }"
+    <button
+      v-if="children"
       ref="$btn"
       :class="[
         'page_link-header text-left bg-brand-100 text-default',
@@ -32,16 +31,29 @@ const width = computed(() => {
         'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
         'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
         'md:p-[20px] max-md:p-3',
-        {
-          'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0':
-            children,
-        },
+        'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0',
       ]"
     >
       <slot name="header" v-bind="{ label }">
         {{ label }}
       </slot>
-    </component>
+    </button>
+    <NuxtLink
+      v-else
+      :to="to"
+      :class="[
+        'page_link-header text-left bg-brand-100 text-default',
+        'min-w-fit',
+        'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
+        'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
+        'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
+        'md:p-[20px] max-md:p-3',
+      ]"
+    >
+      <slot name="header" v-bind="{ label }">
+        {{ label }}
+      </slot>
+    </NuxtLink>
 
     <div v-if="children" class="w-full" :class="{ 'max-h-0': absolute }">
       <div
