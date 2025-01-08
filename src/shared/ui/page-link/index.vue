@@ -27,6 +27,7 @@ const width = computed(() => {
       ref="$btn"
       :class="[
         'page_link-header text-left bg-brand-100 text-default',
+        'min-w-fit',
         'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
         'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
         'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
