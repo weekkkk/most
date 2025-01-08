@@ -21,7 +21,7 @@ const emit = defineEmits<{
       'leading-[2.4rem] max-2xl:leading-control max-md:leading-[1rem]',
     ]"
   >
-    <div class="flex items-center">
+    <div class="flex items-center flex-wrap">
       <h1
         :class="[
           'max-md:w-[9.55rem]',
@@ -31,11 +31,11 @@ const emit = defineEmits<{
       >
         {{ name }}
       </h1>
-      <p v-if="description" class="text-[#B2B0B0]">
+      <p v-if="description" class="text-[#B2B0B0] max-md:w-full">
         ({{ description.replace("(", "").replace(")", "") }})
       </p>
     </div>
-    <h2>
+    <h2 class="whitespace-nowrap">
       {{ price.replace("Р", " ₽").replace("-", " - ") }}
     </h2>
   </li>
