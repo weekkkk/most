@@ -34,7 +34,12 @@ const bgImg = computed(
     ]"
   >
     <slot>
-      {{ label }}
+      <span class="max-md:hidden">
+        {{ label }}
+      </span>
+      <span class="md:hidden">
+        {{ mdLabel || label }}
+      </span>
     </slot>
   </li>
 </template>
