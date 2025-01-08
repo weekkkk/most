@@ -46,7 +46,8 @@ const bgImg = computed(
 
 <style scoped>
 li {
-  margin: 0 calc(v-bind(right) * 1rem) 0 calc(v-bind(left) * 1rem);
+  margin-left: calc(v-bind(left) * 1rem);
+  margin-right: calc(v-bind(right) * 1rem);
 }
 @media (max-width: 768px) {
   li {

@@ -7,11 +7,19 @@ const service = useState<GetServiseDataDto | undefined>(route.path);
 <template>
   <main
     v-if="service"
-    :class="['flex flex-col', 'md:gap-[22.5rem] max-md:gap-40']"
+    :class="[
+      'flex flex-col',
+      'gap-[15rem] max-2xl:gap-[10rem] max-md:gap-[5rem]',
+    ]"
   >
     <UiBanner v-bind="service.banner" />
 
-    <div :class="['flex flex-col', 'md:gap-[22.5rem] max-md:gap-40']">
+    <div
+      :class="[
+        'flex flex-col',
+        'gap-[22.5rem] max-2xl:gap-[15rem] max-md:gap-40',
+      ]"
+    >
       <UiProcess v-bind="service.process" v-if="service.process" />
 
       <UiGuarantees

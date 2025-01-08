@@ -42,7 +42,7 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
     <main
       :class="[
         'w-[59.6rem] max-w-full max-h-0 transition-all overflow-hidden',
-        'md:pr-24 max-md:pr-10',
+        'pr-40 max-md:pr-10',
         { 'mt-[0.45rem] max-2xl:mt-[0.05rem] max-md:mt-3': visible },
       ]"
       :style="visible && { maxHeight: maxH }"

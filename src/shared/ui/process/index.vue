@@ -4,19 +4,19 @@ import type { UiProcessProps } from "./types";
 
 const props = defineProps<UiProcessProps>();
 
-const mls = [4.3, 1.7, 2, 0, 7.4];
-const mrs = [2.4, 6, 0.1, 8.6, 11];
+const startMls = [4.3, 1.7, 2, 0, 7.4];
+const endMls = [4.25, 5.2, 8, 7.5, 1];
 
 const _startSteps = computed<UiProcessStepListProps["steps"]>(() =>
   props.startSteps.map((step, i) => ({
     ...step,
-    left: mls[i],
+    left: startMls[i],
   }))
 );
 const _endSteps = computed<UiProcessStepListProps["steps"]>(() =>
   props.endSteps.map((step, i) => ({
     ...step,
-    right: mrs[i],
+    left: endMls[i],
   }))
 );
 
@@ -42,7 +42,7 @@ const imgSrc = computed(
           {{ title }}
         </span>
         <span class="md:hidden">
-          {{ mdTitle }}
+          {{ mdTitle || title }}
         </span>
       </h2>
     </header>
@@ -50,7 +50,7 @@ const imgSrc = computed(
     <main
       :class="['grid', 'md:grid-cols-3 max-md:grid-cols-1', 'max-md:gap-8']"
     >
-      <UiProcessStepList :steps="_startSteps" />
+      <UiProcessStepList class="z-10" :steps="_startSteps" />
 
       <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
         <figure
@@ -68,12 +68,12 @@ const imgSrc = computed(
         </figure>
       </div>
 
-      <UiProcessStepList :steps="_endSteps" right />
+      <UiProcessStepList class="z-10" :steps="_endSteps" />
     </main>
 
     <footer
       v-if="!noFooter"
-      :class="['md:mt-28 max-md:mt-4', ' flex justify-center']"
+      :class="['mt-[6.75rem] max-2xl:mt-20 max-md:mt-8', 'flex justify-center']"
     >
       <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
     </footer>

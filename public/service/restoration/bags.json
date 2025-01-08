@@ -7,6 +7,7 @@
   },
   "process": {
     "title": "как же мы\nреставрируем сумки",
+    "mdTitle": "как же мы\nреставрируем\nсумки",
     "image": "restoration/bags",
     "startSteps": [
       {
@@ -41,7 +42,8 @@
       },
       {
         "icon": "scissor",
-        "label": "Полировка\nи уход"
+        "label": "Полировка\nи уход",
+        "mdLabel": "Полировка и уход"
       },
       {
         "icon": "polishing",

@@ -110,6 +110,7 @@ const goToStart = () => {
   <footer
     :class="[
       'fixed',
+      'z-10',
       'md:bottom-16 max-md:bottom-3',
       'md:inset-x-16 max-md:inset-x-3',
     ]"
