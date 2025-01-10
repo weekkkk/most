@@ -113,7 +113,7 @@ export default defineNuxtConfig({
       "./src/shared/*/index.ts",
     ],
   },
-  modules: ["nuxt-keen-slider"],
+  modules: ["nuxt-keen-slider", "@nuxt/image"],
   runtimeConfig: {
     public: {
       myData: {},

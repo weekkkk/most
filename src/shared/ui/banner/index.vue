@@ -54,6 +54,11 @@ const imgSrc = computed(
       <UiButton> {{ actionText }} </UiButton>
     </div>
 
-    <img class="object-cover w-full h-full" :src="imgSrc" alt="" />
+    <NuxtImg
+      class="object-cover w-full h-full"
+      :src="imgSrc"
+      alt=""
+      placeholder
+    />
   </section>
 </template>
