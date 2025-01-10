@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data, error } = await useAsyncData("service-list", () =>
-  ServiceService.getList(route.params.category.toString())
+const { data, error, status } = await useAsyncData(
+  `service-list-${route.params.category.toString()}`,
+  () => ServiceService.getList(route.params.category.toString())
 );
 
 const items = computed(() =>

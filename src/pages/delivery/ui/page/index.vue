@@ -52,7 +52,7 @@ const steps: UiGuaranteesProps["steps"] = [
       в пределах МКАД: 1000 ₽
     </p>
 
-    <section>
+    <section class="flex flex-col">
       <header class="mb-[10rem] max-2xl:mb-[7.5rem] max-md:mb-[3rem]">
         <h2
           :class="[
