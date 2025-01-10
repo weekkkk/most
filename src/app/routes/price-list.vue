@@ -2,6 +2,7 @@
 definePageMeta({
   redirect: "/price-list/1",
   whitePage: true,
+  savePosition: true,
 });
 </script>
 

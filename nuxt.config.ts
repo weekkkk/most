@@ -104,6 +104,7 @@ export default defineNuxtConfig({
     layouts: "./src/app/layouts",
     assets: "./src/app/assets",
     middleware: "./src/app/middlewares",
+    app: "./src/app",
   },
   imports: {
     dirs: [
@@ -128,6 +129,11 @@ export default defineNuxtConfig({
         const relativePath = path.relative(publicDir, filePath);
         process.env[relativePath.replace(/[\/\\]/g, "_")] = fileContent;
       });
+    },
+  },
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
     },
   },
 });
