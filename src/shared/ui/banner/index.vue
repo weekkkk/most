@@ -5,9 +5,7 @@ const props = defineProps<UiBannerProps>();
 
 const config = useRuntimeConfig();
 
-const imgSrc = computed(
-  () => `${config.app.baseURL}imgs/banners/${props.image}.png`
-);
+const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
 </script>
 
 <template>
