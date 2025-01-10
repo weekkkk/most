@@ -3,8 +3,6 @@ import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
 
-const config = useRuntimeConfig();
-
 const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
 </script>
 
@@ -14,6 +12,7 @@ const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
       'relative',
       'overflow-hidden',
       'h-[82.5rem] max-2xl:h-[64.5rem] max-md:h-[47.5rem]',
+      'bg-gradient-to-tr from-second-50 to-second-100',
     ]"
   >
     <div
@@ -60,3 +59,5 @@ const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
     />
   </section>
 </template>
+
+<style></style>

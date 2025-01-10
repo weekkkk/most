@@ -41,6 +41,7 @@ const width = computed(() => {
     <NuxtLink
       v-else
       :to="to"
+      :prefetch="false"
       :class="[
         'page_link-header text-left bg-brand-100 text-default',
         'min-w-fit',
@@ -69,7 +70,7 @@ const width = computed(() => {
               class="text-left hover:text-default transition-colors w-full md:px-[1rem] max-md:px-3 py-[0.25rem]"
             >
               <slot v-bind="{ ...child, to: `${to}/${child.to}` }">
-                <NuxtLink :to="`${to}/${child.to}`">
+                <NuxtLink :prefetch="false" :to="`${to}/${child.to}`">
                   {{ child.label }}
                 </NuxtLink>
               </slot>
