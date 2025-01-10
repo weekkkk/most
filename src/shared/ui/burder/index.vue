@@ -5,7 +5,12 @@ const visible = ref(false);
 
 const $menu = ref();
 
-const maxHeight = computed(() => $menu.value?.$el.clientHeight);
+const route = useRoute();
+
+watch(
+  () => route.path,
+  () => (visible.value = false)
+);
 </script>
 
 <template>
@@ -37,9 +42,7 @@ const maxHeight = computed(() => $menu.value?.$el.clientHeight);
         class="max-h-[calc(100vh-3rem-1.75rem)] overflow-hidden transition-all duration-200"
         :style="{ maxHeight: (!visible && '0px') || undefined }"
       >
-        <!-- class="max-h-0 overflow-hidden transition-all" -->
-        <!-- :style="{ maxHeight: `${(visible && maxHeight) || 0}px` }" -->
-        <UiNav ref="$menu" col right :items="items" no-absolute />
+        <UiNav @click.stop ref="$menu" col right :items="items" no-absolute />
       </div>
     </div>
   </div>
