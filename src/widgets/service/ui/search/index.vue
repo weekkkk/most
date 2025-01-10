@@ -43,7 +43,7 @@ const search = async ({ target }: Event) => {
 
 <template>
   <UiButton
-    @focus="openSearch"
+    @click="openSearch"
     :class="[
       '!p-[1.45rem] max-2xl:!p-[1.15rem] max-md:!p-[.65rem]',
       '!rounded-[2.2rem]',
