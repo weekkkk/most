@@ -20,18 +20,30 @@ const logoColor = computed<"white" | "blue">(() =>
     ]"
   >
     <UiNav class="max-md:hidden w-full" :items="startNavItems" />
-    <img
-      v-if="logoColor === 'white'"
-      src="/icons/logo.svg"
-      alt="Logo"
-      :class="['h-[1.7rem] max-2xl:h-[1.187rem] max-md:h-[0.95rem]']"
-    />
-    <img
-      v-else
-      src="/icons/logo-blue.svg"
-      alt="Logo"
-      :class="['h-[1.7rem] max-2xl:h-[1.187rem] max-md:h-[0.95rem]']"
-    />
+    <div>
+      <NuxtLink
+        :class="[
+          'inline-block',
+          'relative',
+          'min-w-[8.95rem] max-2xl:min-14w-[6.25rem] max-md:min-w-[4.95rem]',
+          'pb-[calc((34/(179/100))*1%)]',
+        ]"
+        to="/"
+      >
+        <img
+          class="absolute object-cover w-full h-full"
+          v-if="logoColor === 'white'"
+          src="/icons/logo.svg"
+          alt="Logo"
+        />
+        <img
+          class="absolute object-cover w-full h-full"
+          v-else
+          src="/icons/logo-blue.svg"
+          alt="Logo"
+        />
+      </NuxtLink>
+    </div>
     <UiNav class="max-md:hidden w-full" :items="endNavItems" right />
     <UiBurder
       class="hidden max-md:inline-block"
