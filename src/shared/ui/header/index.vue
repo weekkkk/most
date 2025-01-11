@@ -25,7 +25,7 @@ const logoColor = computed<"white" | "blue">(() =>
         :class="[
           'inline-block',
           'relative',
-          'min-w-[8.95rem] max-2xl:min-14w-[6.25rem] max-md:min-w-[4.95rem]',
+          'min-w-[8.95rem] max-2xl:min-w-[6.25rem] max-md:min-w-[4.95rem]',
           'pb-[calc((34/(179/100))*1%)]',
         ]"
         to="/"
