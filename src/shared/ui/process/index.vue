@@ -75,7 +75,9 @@ const imgSrc = computed(
       v-if="!noFooter"
       :class="['mt-[6.75rem] max-2xl:mt-20 max-md:mt-8', 'flex justify-center']"
     >
-      <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
+      <NuxtLink :to="{ path: '/', hash: '#feedback' }">
+        <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
+      </NuxtLink>
     </footer>
   </section>
 </template>

@@ -16,7 +16,9 @@ const props = defineProps<UiGuaranteesProps>();
         'flex justify-center',
       ]"
     >
-      <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
+      <NuxtLink :to="{ path: '/', hash: '#feedback' }">
+        <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
+      </NuxtLink>
     </footer>
   </section>
 </template>

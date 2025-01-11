@@ -48,7 +48,9 @@ const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
         </slot>
       </p>
 
-      <UiButton> {{ actionText }} </UiButton>
+      <NuxtLink :to="{ path: '/', hash: '#feedback' }">
+        <UiButton> {{ actionText }} </UiButton>
+      </NuxtLink>
     </div>
 
     <NuxtImg

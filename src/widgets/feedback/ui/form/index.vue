@@ -30,7 +30,7 @@ const sentFeedback = async () => {
 </script>
 
 <template>
-  <div :class="['flex justify-center relative', 'max-md:px-3']">
+  <div id="feedback" :class="['flex justify-center relative', 'max-md:px-3']">
     <div class="flex flex-col items-center">
       <div
         :class="[
