@@ -16,12 +16,7 @@ const imgSrc = computed(() => ({
 
 const $img = ref<HTMLImageElement>();
 const isLoad = ref(false);
-const onLoad = () => {
-  isLoad.value = true;
-};
-const onError = () => {
-  console.log("error");
-};
+
 onMounted(() => {
   if (!$img.value) return;
   if ($img.value.complete) isLoad.value = true;
@@ -45,7 +40,7 @@ onMounted(() => {
             :style="{
               background: `linear-gradient(${loaderGradient.toString()})`,
             }"
-          ></div>
+          />
         </div>
       </div>
     </Transition>

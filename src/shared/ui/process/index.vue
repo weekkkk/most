@@ -22,9 +22,26 @@ const _endSteps = computed<UiProcessStepListProps["steps"]>(() =>
 
 const config = useRuntimeConfig();
 
-const imgSrc = computed(
-  () => `${config.app.baseURL}imgs/process/${props.image}.png`
+const imgFolder = computed(
+  () => `${config.app.baseURL}imgs/process/${props.image}`
 );
+const imgSrc = computed(() => ({
+  d: `${imgFolder.value}/d.png`,
+  t: `${imgFolder.value}/t.png`,
+  m: `${imgFolder.value}/m.png`,
+}));
+const imgPlaceholderSrc = computed(() => ({
+  d: `${imgFolder.value}/p/d.png`,
+  t: `${imgFolder.value}/p/t.png`,
+  m: `${imgFolder.value}/p/m.png`,
+}));
+const $img = ref<HTMLImageElement>();
+const isLoad = ref(false);
+
+onMounted(() => {
+  if (!$img.value) return;
+  if ($img.value.complete) isLoad.value = true;
+});
 </script>
 
 <template>
@@ -60,11 +77,46 @@ const imgSrc = computed(
             'max-md:w-full max-md:pb-[calc((250/(345/100))*1%)]',
           ]"
         >
-          <img
-            :class="['absolute object-cover w-full h-full']"
-            :src="imgSrc"
-            alt=""
-          />
+          <picture>
+            <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
+            <source :srcset="imgSrc.t" media="(min-width: 768px)" />
+            <img
+              ref="$img"
+              :src="imgSrc.m"
+              class="absolute object-cover w-full h-full transition-all"
+              :class="{
+                'opacity-0': !isLoad,
+              }"
+              alt=""
+              @load="isLoad = true"
+              @loadstart="isLoad = false"
+            />
+          </picture>
+
+          <Transition>
+            <div v-if="!isLoad" class="object-cover w-full h-full absolute">
+              <div class="animate-pulse object-cover w-full h-full">
+                <picture>
+                  <source
+                    :srcset="imgPlaceholderSrc.d"
+                    media="(min-width: 1536px)"
+                  />
+                  <source
+                    :srcset="imgPlaceholderSrc.t"
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    ref="$img"
+                    :src="imgPlaceholderSrc.m"
+                    class="object-cover w-full h-full blur-md"
+                    alt=""
+                    @load="isLoad = true"
+                    @loadstart="isLoad = false"
+                  />
+                </picture>
+              </div>
+            </div>
+          </Transition>
         </figure>
       </div>
 
@@ -81,3 +133,15 @@ const imgSrc = computed(
     </footer>
   </section>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
