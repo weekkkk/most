@@ -65,24 +65,11 @@ onMounted(() => {
       </NuxtLink>
     </div>
 
-    <NuxtImg
-      class="max-2xl:hidden object-cover w-full h-full"
-      :src="imgSrc.d"
-      alt=""
-      placeholder
-    />
-    <NuxtImg
-      class="2xl:hidden max-md:hidden object-cover w-full h-full"
-      :src="imgSrc.t"
-      alt=""
-      placeholder
-    />
-    <NuxtImg
-      class="md:hidden object-cover w-full h-full"
-      :src="imgSrc.m"
-      alt=""
-      placeholder
-    />
+    <picture>
+      <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
+      <source :srcset="imgSrc.t" media="(min-width: 768px)" />
+      <img :src="imgSrc.m" class="object-cover w-full h-full" alt="" />
+    </picture>
   </section>
 </template>
 
