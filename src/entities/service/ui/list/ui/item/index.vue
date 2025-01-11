@@ -25,7 +25,7 @@ const emit = defineEmits<{
       <h1 :class="['max-md:w-[8.25rem]', 'max-2xl:mr-[0.5rem]', 'lowercase']">
         {{ name }}
       </h1>
-      <p v-if="description" class="text-[#B2B0B0] max-md:w-full max-md:pr-10">
+      <p v-if="description" class="text-[#B2B0B0] max-md:w-full max-md:pr-8">
         ({{ description.replace("(", "").replace(")", "") }})
       </p>
     </div>
