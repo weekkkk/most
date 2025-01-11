@@ -3,19 +3,16 @@ import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
 
-const imgFolder = computed(() => `/imgs/banners/${props.image}`);
+const config = useRuntimeConfig();
+
+const imgFolder = computed(
+  () => `${config.app.baseURL}/imgs/banners/${props.image}`
+);
 const imgSrc = computed(() => ({
   d: `${imgFolder.value}/d.jpg`,
   t: `${imgFolder.value}/t.jpg`,
   m: `${imgFolder.value}/m.jpg`,
 }));
-
-const size = ref<"d" | "t" | "m">();
-onMounted(() => {
-  if (window.innerWidth < 768) size.value = "m";
-  else if (window.innerWidth < 1536) size.value = "t";
-  else size.value = "d";
-});
 </script>
 
 <template>
