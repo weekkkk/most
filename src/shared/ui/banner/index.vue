@@ -6,13 +6,26 @@ const props = defineProps<UiBannerProps>();
 const config = useRuntimeConfig();
 
 const imgFolder = computed(
-  () => `${config.app.baseURL}/imgs/banners/${props.image}`
+  () => `${config.app.baseURL}imgs/banners/${props.image}`
 );
 const imgSrc = computed(() => ({
   d: `${imgFolder.value}/d.jpg`,
   t: `${imgFolder.value}/t.jpg`,
   m: `${imgFolder.value}/m.jpg`,
 }));
+
+const $img = ref<HTMLImageElement>();
+const isLoad = ref(false);
+const onLoad = () => {
+  isLoad.value = true;
+};
+const onError = () => {
+  console.log("error");
+};
+onMounted(() => {
+  if (!$img.value) return;
+  if ($img.value.complete) isLoad.value = true;
+});
 </script>
 
 <template>
@@ -24,6 +37,19 @@ const imgSrc = computed(() => ({
       'bg-gradient-to-tr from-second-50 to-second-100',
     ]"
   >
+    <Transition>
+      <div v-if="!isLoad" class="bg-common object-cover w-full h-full absolute">
+        <div class="animate-pulse object-cover w-full h-full">
+          <div
+            class="bg-second-100 object-cover w-full h-full"
+            :style="{
+              background: `linear-gradient(${loaderGradient.toString()})`,
+            }"
+          ></div>
+        </div>
+      </div>
+    </Transition>
+
     <div
       :class="[
         'absolute object-cover w-full h-full',
@@ -65,9 +91,26 @@ const imgSrc = computed(() => ({
     <picture>
       <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
       <source :srcset="imgSrc.t" media="(min-width: 768px)" />
-      <img :src="imgSrc.m" class="object-cover w-full h-full" alt="" />
+      <img
+        ref="$img"
+        :src="imgSrc.m"
+        class="object-cover w-full h-full"
+        alt=""
+        @load="isLoad = true"
+        @loadstart="isLoad = false"
+      />
     </picture>
   </section>
 </template>
 
-<style></style>
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
