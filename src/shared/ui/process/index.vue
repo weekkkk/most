@@ -77,7 +77,7 @@ onMounted(() => {
             'max-md:w-full max-md:pb-[calc((250/(345/100))*1%)]',
           ]"
         >
-          <picture v-if="isLoad">
+          <picture>
             <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
             <source :srcset="imgSrc.t" media="(min-width: 768px)" />
             <img
@@ -94,7 +94,10 @@ onMounted(() => {
           </picture>
 
           <Transition>
-            <div v-if="!isLoad" class="object-cover w-full h-full absolute">
+            <div
+              v-if="!isLoad"
+              class="object-cover w-full h-full absolute bg-default"
+            >
               <div class="animate-pulse object-cover w-full h-full">
                 <picture>
                   <source
