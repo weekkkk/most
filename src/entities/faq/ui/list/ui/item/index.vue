@@ -7,7 +7,7 @@ const visible = ref(false);
 
 const $answer = ref<HTMLElement>();
 
-const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
+const maxH = computed(() => $answer.value?.clientHeight);
 </script>
 
 <template>
@@ -41,11 +41,15 @@ const maxH = computed(() => $answer.value && `${$answer.value.clientHeight}px`);
 
     <main
       :class="[
-        'w-[59.6rem] max-w-full max-h-0 transition-all overflow-hidden',
+        'w-[59.6rem] max-w-full transition-all overflow-hidden',
         'pr-40 max-md:pr-10',
         { 'mt-[0.45rem] max-2xl:mt-[0.05rem] max-md:mt-3': visible },
+        { 'opacity-0': !visible },
       ]"
-      :style="visible && { maxHeight: maxH }"
+      :style="{
+        maxHeight: visible ? `${maxH}px` : 0,
+        transitionDuration: `calc(${maxH}/20*75ms)`,
+      }"
     >
       <p
         ref="$answer"

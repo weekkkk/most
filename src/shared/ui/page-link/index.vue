@@ -8,7 +8,7 @@ const $btn = ref<HTMLButtonElement>();
 const width = computed(() => {
   const width = $btn.value?.getBoundingClientRect().width;
   if (!width) return;
-  return Math.ceil(width);
+  return width;
 });
 </script>
 
@@ -18,6 +18,7 @@ const width = computed(() => {
       'page_link',
       'list-none inline-flex flex-col items-start',
       'max-2xl:text-[0.7rem] max-md:text-[0.7rem]',
+      'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.45rem]',
       { group: children },
     ]"
   >
@@ -25,13 +26,13 @@ const width = computed(() => {
       v-if="children"
       ref="$btn"
       :class="[
+        'z-10',
         'page_link-header text-left bg-brand-100 text-default',
         'min-w-fit',
-        'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
-        'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
-        'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
-        'md:p-[1rem] max-md:p-3',
-        'group-hover:w-full group-hover:rounded-b-none transition-all duration-150 group-hover:delay-0',
+        'rounded-[1.6rem] max-2xl:rounded-[1.425rem] max-md:rounded-[0.975rem]',
+        'p-4 max-md:p-3',
+        'group-hover:w-full transition-all duration-200 group-hover:delay-0',
+        'cursor-default',
       ]"
     >
       <slot name="header" v-bind="{ label }">
@@ -45,10 +46,8 @@ const width = computed(() => {
       :class="[
         'page_link-header text-left bg-brand-100 text-default',
         'min-w-fit',
-        'md:rounded-t-[calc(10px+1.2rem)] md:rounded-b-[calc(10px+1.2rem)]',
-        'max-md:rounded-t-[0.875rem] max-md:rounded-b-[0.875rem]',
-        'leading-control max-2xl:leading-[0.85rem] max-md:leading-[0.25rem]',
-        'md:p-[1rem] max-md:p-3',
+        'rounded-[1.6rem] max-2xl:rounded-[1.425rem] max-md:rounded-[0.975rem]',
+        'p-4 max-md:p-3',
       ]"
     >
       <slot name="header" v-bind="{ label }">
@@ -56,13 +55,36 @@ const width = computed(() => {
       </slot>
     </NuxtLink>
 
-    <div v-if="children" class="w-full" :class="{ 'max-h-0': absolute }">
+    <div v-if="children" class="w-full max-h-0">
       <div
-        class="page_link-item_list md:-mt-3 max-md:-mt-1 bg-brand-100 md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-b-[0.875rem] max-h-0 overflow-hidden transition-all group-hover:delay-75"
+        :class="[
+          'page_link-item_list page_link-item_list-bg',
+          'bg-brand-100',
+          'max-h-0 overflow-hidden',
+          '-mt-[1.6rem] max-2xl:-mt-[1.425rem] max-md:-mt-[0.975rem]',
+          'md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-b-[0.875rem]',
+          'transition-all group-hover:delay-200',
+        ]"
+      ></div>
+    </div>
+
+    <div v-if="children" class="w-full z-10" :class="{ 'max-h-0': absolute }">
+      <div
+        :class="[
+          'page_link-item_list',
+          'max-h-0 overflow-hidden',
+          '-mt-[1.6rem] max-2xl:-mt-[1.425rem] max-md:-mt-[0.975rem]',
+          'md:rounded-b-[calc(10px+1.2rem)] max-md:rounded-b-[0.875rem]',
+          'transition-all group-hover:delay-200',
+        ]"
       >
-        <ul class="text-common list-none">
+        <ul :class="['text-common list-none']">
           <li
-            class="relative transition-colors last:mb-3"
+            :class="[
+              'relative transition-colors',
+              'first:mt-[0.85rem] max-2xl:first:mt-[0.675rem] max-md:first:mt-[0.475rem]',
+              'last:mb-3 max-md:last:mb-2',
+            ]"
             v-for="(child, index) in children"
             :key="index"
           >
@@ -83,15 +105,35 @@ const width = computed(() => {
 </template>
 
 <style>
-.page_link:hover .page_link-item_list {
-  max-height: calc(v-bind("children?.length") * 2.5rem + 0.75rem);
+.page_link .page_link-item_list {
+  transition-duration: calc(v-bind("children?.length") * 150ms);
 }
 
-.page_link .page_link-item_list {
-  transition-duration: calc(v-bind("children?.length") * 100ms + 25ms);
-}
 .page_link .page_link-header {
   width: calc(v-bind(width) * 1px);
-  transition-delay: calc(v-bind("children?.length") * 100ms + 25ms - 75ms);
+  transition-delay: calc(v-bind("children?.length") * 150ms);
+}
+
+.page_link:hover .page_link-item_list {
+  max-height: calc(v-bind("children?.length") * 1.7rem + 1.6rem);
+}
+.page_link .page_link-item_list-bg {
+  height: calc(v-bind("children?.length") * 1.7rem + 1.6rem);
+}
+@media (max-width: 1535px) {
+  .page_link:hover .page_link-item_list {
+    max-height: calc(v-bind("children?.length") * 1.35rem + 1.425rem);
+  }
+  .page_link .page_link-item_list-bg {
+    height: calc(v-bind("children?.length") * 1.35rem + 1.425rem);
+  }
+}
+@media (max-width: 767px) {
+  .page_link:hover .page_link-item_list {
+    max-height: calc(v-bind("children?.length") * 0.95rem + 1rem);
+  }
+  .page_link .page_link-item_list-bg {
+    height: calc(v-bind("children?.length") * 0.95rem + 1rem);
+  }
 }
 </style>

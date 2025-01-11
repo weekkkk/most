@@ -17,7 +17,7 @@ watch(
   <div class="inline-flex flex-col">
     <div class="flex flex-col items-end overflow-hidden rounded-[4.2rem]">
       <UiButton
-        class="transition-all"
+        class="transition-all duration-200"
         @click="visible = true"
         :class="{ 'translate-x-full': visible }"
         size="small"
@@ -26,7 +26,7 @@ watch(
       </UiButton>
       <div class="max-h-0">
         <UiButton
-          class="transition-all"
+          class="transition-all duration-200"
           @click="visible = false"
           :class="['-translate-y-full', { 'translate-x-full': !visible }]"
           size="small"
@@ -39,11 +39,18 @@ watch(
 
     <div class="max-h-0">
       <div
-        class="max-h-[calc(100vh-3rem-1.75rem)] overflow-hidden transition-all duration-200"
-        :style="{ maxHeight: (!visible && '0px') || undefined }"
+        class="burder-items overflow-hidden transition-all"
+        :class="{ '!max-h-0 opacity-0 ': !visible }"
       >
         <UiNav @click.stop ref="$menu" col right :items="items" no-absolute />
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.burder-items {
+  max-height: calc((v-bind("items.length") + 5) * 1.95rem);
+  transition-duration: calc((v-bind("items.length") + 5) * 50ms);
+}
+</style>

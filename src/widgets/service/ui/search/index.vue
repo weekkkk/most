@@ -52,8 +52,9 @@ const search = async ({ target }: Event) => {
       '!rounded-[2.2rem]',
       'flex !justify-between',
       'w-[4.4rem] max-2xl:w-[3.8rem] max-md:w-[2.5rem]',
+      'cursor-pointer',
       {
-        '!px-[2rem] max-md:!px-[1rem] !w-[17rem] max-2xl:!w-[18.2rem] max-md:!w-full delay-150':
+        '!px-[2rem] max-md:!px-[1rem] !w-[17rem] max-2xl:!w-[18.2rem] max-md:!w-full delay-150 !cursor-default':
           stateOpenSearch,
       },
       'transition-all duration-300',
