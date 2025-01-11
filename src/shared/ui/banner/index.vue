@@ -3,7 +3,19 @@ import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
 
-const imgSrc = computed(() => `/imgs/banners/${props.image}.jpg`);
+const imgFolder = computed(() => `/imgs/banners/${props.image}`);
+const imgSrc = computed(() => ({
+  d: `${imgFolder.value}/d.jpg`,
+  t: `${imgFolder.value}/t.jpg`,
+  m: `${imgFolder.value}/m.jpg`,
+}));
+
+const size = ref<"d" | "t" | "m">();
+onMounted(() => {
+  if (window.innerWidth < 768) size.value = "m";
+  else if (window.innerWidth < 1536) size.value = "t";
+  else size.value = "d";
+});
 </script>
 
 <template>
@@ -54,8 +66,20 @@ const imgSrc = computed(() => `/imgs/banners/${props.image}.jpg`);
     </div>
 
     <NuxtImg
-      class="object-cover w-full h-full"
-      :src="imgSrc"
+      class="max-2xl:hidden object-cover w-full h-full"
+      :src="imgSrc.d"
+      alt=""
+      placeholder
+    />
+    <NuxtImg
+      class="2xl:hidden max-md:hidden object-cover w-full h-full"
+      :src="imgSrc.t"
+      alt=""
+      placeholder
+    />
+    <NuxtImg
+      class="md:hidden object-cover w-full h-full"
+      :src="imgSrc.m"
       alt=""
       placeholder
     />
