@@ -106,7 +106,6 @@ onMounted(() => {
                     media="(min-width: 768px)"
                   />
                   <img
-                    ref="$img"
                     :src="imgPlaceholderSrc.m"
                     class="object-cover w-full h-full blur-md"
                     alt=""
