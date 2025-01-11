@@ -3,7 +3,7 @@ import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
 
-const imgSrc = computed(() => `/imgs/banners/${props.image}.png`);
+const imgSrc = computed(() => `/imgs/banners/${props.image}.jpg`);
 </script>
 
 <template>
