@@ -4,6 +4,19 @@ const bannerDescription =
   "в нашем мире, где внешний вид играет важную роль, мы стремимся предоставить вам лучшие услуги по уходу за вашими любимыми вещами";
 const bannerImage = "cleaning";
 const bannerActionText = "вызвать курьера";
+const bannerLoaderGradient = [
+  "-1355deg",
+  "#121317",
+  "#262523",
+  "#584B45",
+  "#433A35",
+  "#161618",
+  "#4C4239",
+  "#8A7768",
+  "#7B6859",
+  "#483B35",
+  "#433630",
+];
 
 const processTitle = "искусство ухода за вашими\nлюбимыми вещами";
 const processMdTitle = "искусство ухода\nза вашими\nлюбимыми вещами";
@@ -63,6 +76,7 @@ const processEndSteps: UiProcessProps["endSteps"] = [
     :description="bannerDescription"
     :image="bannerImage"
     :actionText="bannerActionText"
+    :loader-gradient="bannerLoaderGradient"
   />
   <div
     :class="[
