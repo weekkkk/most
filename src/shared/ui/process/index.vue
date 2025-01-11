@@ -94,7 +94,7 @@ onMounted(() => {
           </picture>
 
           <Transition>
-            <div v-if="!isLoad" class="object-cover w-full h-full absolute">
+            <div v-if="isLoad" class="object-cover w-full h-full absolute">
               <div class="animate-pulse object-cover w-full h-full">
                 <picture>
                   <source
@@ -110,8 +110,6 @@ onMounted(() => {
                     :src="imgPlaceholderSrc.m"
                     class="object-cover w-full h-full blur-md"
                     alt=""
-                    @load="isLoad = true"
-                    @loadstart="isLoad = false"
                   />
                 </picture>
               </div>
