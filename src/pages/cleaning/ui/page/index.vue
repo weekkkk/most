@@ -67,8 +67,8 @@ const processEndSteps: UiProcessProps["endSteps"] = [
   <div
     :class="[
       'flex flex-col',
-      'mt-[15rem] max-2xl:mt-[10rem] max-md:mt-[5rem]',
-      'gap-[22.5rem] max-2xl:gap-[15rem] max-md:gap-[10rem]',
+      'mt-[10rem] max-2xl:mt-[5rem] max-md:mt-[5rem]',
+      'gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]',
     ]"
   >
     <FeedbackFormWidget />

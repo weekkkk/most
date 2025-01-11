@@ -9,7 +9,7 @@ const service = useState<GetServisePageDataDto | undefined>(route.path);
     v-if="service"
     :class="[
       'flex flex-col',
-      'gap-[15rem] max-2xl:gap-[10rem] max-md:gap-[5rem]',
+      'gap-[10rem] max-2xl:gap-[5rem] max-md:gap-[5rem]',
     ]"
   >
     <UiBanner v-bind="service.banner" />
@@ -17,7 +17,7 @@ const service = useState<GetServisePageDataDto | undefined>(route.path);
     <div
       :class="[
         'flex flex-col',
-        'gap-[22.5rem] max-2xl:gap-[15rem] max-md:gap-40',
+        'gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]',
       ]"
     >
       <UiProcess v-bind="service.process" v-if="service.process" />

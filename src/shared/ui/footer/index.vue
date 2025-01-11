@@ -11,7 +11,7 @@ const goToStart = () => {
     :class="[
       'md:px-14 max-md:px-3',
       'pb-[14.2rem] max-2xl:pb-[12rem] max-md:pb-[7.75rem]',
-      'mt-[22.5rem] max-2xl:mt-[15rem] max-md:mt-40',
+      'mt-[20rem] max-2xl:mt-[10rem] max-md:mt-40',
       'text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem]',
       'leading-control max-2xl:leading-small max-md:leading-small',
     ]"
