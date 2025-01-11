@@ -111,11 +111,12 @@ const goToStart = () => {
     :class="[
       'fixed',
       'z-10',
+      'max-h-0 flex items-end',
       'md:bottom-16 max-md:bottom-3',
       'md:inset-x-16 max-md:inset-x-3',
     ]"
   >
-    <ul class="flex justify-between">
+    <ul class="max-h-0 flex justify-between items-end w-full">
       <ul class="flex">
         <li>
           <a href="https://wa.me/79261234858" target="_blank">
