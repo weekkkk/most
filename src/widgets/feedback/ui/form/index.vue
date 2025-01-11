@@ -110,7 +110,7 @@ const sentFeedback = async () => {
           class="max-md:w-full"
           :disabled="(showDisabled && disabled) || isLoading"
         >
-          {{ !isLoading ? "вызвать курьера" : "отправка формы..." }}
+          {{ !isLoading ? "вызвать курьера" : "отправляем..." }}
         </UiButton>
       </form>
       <img
