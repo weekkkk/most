@@ -22,16 +22,10 @@ const emit = defineEmits<{
     ]"
   >
     <div class="flex items-center flex-wrap">
-      <h1
-        :class="[
-          'max-md:w-[9.55rem]',
-          'mr-[1rem] max-2xl:mr-[0.5rem]',
-          'lowercase',
-        ]"
-      >
+      <h1 :class="['max-md:w-[8.25rem]', 'max-2xl:mr-[0.5rem]', 'lowercase']">
         {{ name }}
       </h1>
-      <p v-if="description" class="text-[#B2B0B0] max-md:w-full">
+      <p v-if="description" class="text-[#B2B0B0] max-md:w-full max-md:pr-10">
         ({{ description.replace("(", "").replace(")", "") }})
       </p>
     </div>
