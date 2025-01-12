@@ -2,6 +2,10 @@
 const route = useRoute();
 
 const service = useState<GetServisePageDataDto | undefined>(route.path);
+
+useHead({
+  title: service.value?.title,
+});
 </script>
 
 <template>
