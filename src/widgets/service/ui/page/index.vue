@@ -3,8 +3,9 @@ const route = useRoute();
 
 const service = useState<GetServisePageDataDto | undefined>(route.path);
 
-useHead({
+useSeoMeta({
   title: service.value?.title,
+  keywords: service.value?.keywords,
 });
 </script>
 

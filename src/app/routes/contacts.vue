@@ -1,7 +1,10 @@
 <script setup lang="ts">
 definePageMeta({
-  title: "контакты",
   whitePage: true,
+});
+
+useSeoMeta({
+  title: "Контакты",
 });
 </script>
 

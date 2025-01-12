@@ -31,6 +31,7 @@ onMounted(() => {
     ref="$input"
     :value="modelValue"
     @input="updateInput"
+    :maxlength="type === 'tel' ? 18 : undefined"
     :type="type"
     :placeholder="placeholder"
     class="w-[27.5rem] h-[5rem] max-md:w-[17.25rem] max-md:h-[5rem] rounded-[20rem] leading-[1.2rem] outline-none text-[1rem] font-medium bg-[#F5F5F5] text-center"

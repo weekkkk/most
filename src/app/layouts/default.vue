@@ -2,12 +2,10 @@
 const route = useRoute();
 
 const title = computed(() => route.meta.title);
+const keys = computed(() => route.meta.keys as string[] | undefined);
 </script>
 
 <template>
-  <Head>
-    <Title>{{ title }}</Title>
-  </Head>
   <NuxtLoadingIndicator />
   <LayoutHeaderWidget />
   <NuxtPage />

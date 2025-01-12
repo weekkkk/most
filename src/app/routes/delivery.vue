@@ -1,7 +1,10 @@
 <script setup lang="ts">
 definePageMeta({
-  title: "доставка",
   whitePage: true,
+});
+
+useSeoMeta({
+  title: "Доставка",
 });
 </script>
 
