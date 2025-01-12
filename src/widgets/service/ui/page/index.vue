@@ -1,7 +1,12 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const service = useState<GetServisePageDataDto | undefined>(route.path);
+const { data: service } = await useAsyncData(`${route.path}`, () =>
+  ServicePageService.getData(
+    route.params.service + "",
+    route.params.subject + ""
+  )
+);
 
 useSeoMeta({
   title: service.value?.title,
