@@ -131,4 +131,12 @@ export default defineNuxtConfig({
       });
     },
   },
+  generate: {
+    routes: [
+      "/price-list/1",
+      "/price-list/2",
+      "/price-list/3",
+      "/price-list/4",
+    ],
+  },
 });

@@ -22,7 +22,13 @@ const emit = defineEmits<{
     ]"
   >
     <div class="flex items-center flex-wrap">
-      <h1 :class="['max-md:w-[8.25rem]', 'max-2xl:mr-[0.5rem]', 'lowercase']">
+      <h1
+        :class="[
+          'max-md:w-[8.25rem]',
+          'mr-4 max-2xl:mr-2 max-md:mr-0',
+          'lowercase',
+        ]"
+      >
         {{ name }}
       </h1>
       <p v-if="description" class="text-[#B2B0B0] max-md:w-full max-md:pr-8">
