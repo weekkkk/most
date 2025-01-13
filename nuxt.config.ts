@@ -113,7 +113,16 @@ export default defineNuxtConfig({
       "./src/shared/*/index.ts",
     ],
   },
-  modules: ["nuxt-keen-slider", "@nuxt/image"],
+  modules: [
+    "nuxt-keen-slider",
+    "@nuxt/image",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+  ],
+  site: {
+    url: "https://mostclean.ru/",
+    name: "Химчистка обуви и сумок в Москве",
+  },
   runtimeConfig: {
     public: {
       myData: {},

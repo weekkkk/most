@@ -3,6 +3,8 @@ import type { UiBannerProps } from "./types";
 
 const props = defineProps<UiBannerProps>();
 
+const route = useRoute();
+
 const config = useRuntimeConfig();
 
 const imgFolder = computed(
@@ -61,7 +63,12 @@ onMounted(() => {
           'whitespace-pre-wrap',
         ]"
       >
-        {{ title }}
+        <span class="max-md:hidden">
+          {{ title }}
+        </span>
+        <span class="md:hidden">
+          {{ mdTitle || title }}
+        </span>
       </h1>
 
       <p
@@ -84,8 +91,17 @@ onMounted(() => {
     </div>
 
     <picture>
-      <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
-      <source :srcset="imgSrc.t" media="(min-width: 768px)" />
+      <source
+        :srcset="imgSrc.d"
+        media="(min-width: 1536px)"
+        type="image/jpeg"
+      />
+      <source :srcset="imgSrc.t" media="(min-width: 768px)" type="image/jpeg" />
+      <source
+        v-if="route.path === '/'"
+        :srcset="imgSrc.m.replace('jpg', 'png')"
+        type="image/png"
+      />
       <img
         ref="$img"
         :src="imgSrc.m"

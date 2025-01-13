@@ -6,16 +6,16 @@ const bannerImage = "cleaning";
 const bannerActionText = "вызвать курьера";
 const bannerLoaderGradient = [
   "-1355deg",
-  "#121317",
-  "#262523",
-  "#584B45",
-  "#433A35",
-  "#161618",
-  "#4C4239",
-  "#8A7768",
-  "#7B6859",
-  "#483B35",
-  "#433630",
+  "#53565B",
+  "#6A6F75",
+  "#70757B",
+  "#B3B8BE",
+  "#B8BDC3",
+  "#D2D7DD",
+  "#D3D8DE",
+  "#C9D0D6",
+  "#A7AEB4",
+  "#8E959D",
 ];
 
 const processTitle = "искусство ухода за вашими\nлюбимыми вещами";
