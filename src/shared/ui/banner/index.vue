@@ -49,7 +49,7 @@ onMounted(() => {
 
     <div
       :class="[
-        'absolute object-cover w-full h-full',
+        'absolute object-cover w-full h-full z-[10]',
         'text-center text-default',
         'py-60 max-2xl:py-[14.5rem] max-md:py-[7.75rem]',
       ]"
@@ -102,6 +102,10 @@ onMounted(() => {
         v-if="route.path === '/'"
         :srcset="imgSrc.m.replace('jpg', 'png')"
         type="image/png"
+      />
+      <div
+        v-if="blackout"
+        class="bg-common w-full h-full opacity-60 absolute"
       />
       <img
         ref="$img"

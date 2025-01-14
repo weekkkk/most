@@ -78,6 +78,7 @@ const processEndSteps: UiProcessProps["endSteps"] = [
     :actionText="bannerActionText"
     :loader-gradient="bannerLoaderGradient"
     noLineMerge
+    blackout
   />
   <div
     :class="[
