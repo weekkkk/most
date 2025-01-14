@@ -3,12 +3,6 @@ import type { ReviewListProps } from "./types";
 
 const props = defineProps<ReviewListProps>();
 
-const itemClasses = [
-  "col-start-1 col-end-2 row-start-1 row-end-2",
-  "col-start-1 col-end-2 row-start-2 row-end-3",
-  "col-start-2 col-end-3 row-start-2 row-end-3",
-  "col-start-3 col-end-4 row-start-1 row-end-2",
-];
 </script>
 
 <template>
@@ -22,7 +16,6 @@ const itemClasses = [
       v-for="({ id, ...rest }, index) in items"
       :key="id"
       v-bind="rest"
-      :class="itemClasses[index]"
     />
   </div>
 
@@ -33,7 +26,6 @@ const itemClasses = [
           class="flex justify-center keen-slider__slide"
           v-for="({ id, ...rest }, index) in items"
           :key="id"
-          :class="itemClasses[index]"
         >
           <ReviewListItem v-bind="rest" class="h-[16.1rem] w-[10.8rem]" />
         </div>
