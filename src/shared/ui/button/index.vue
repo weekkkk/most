@@ -34,7 +34,7 @@ const imgSrc = computed(() => `${config.app.baseURL}${props.img}`);
           img && size === 'medium',
         'md:p-[1.5rem] max-md:p-[1.8rem] max-md:py-[1.4rem] md:rounded-[calc(1.5rem+(24px/2))] max-md:rounded-[calc(1.8rem+(24px/2))]':
           img && size === 'large',
-        'md:px-[2rem] max-md:px-[1.25rem] max-md:py-[1.4rem]':
+        'md:px-[2rem] max-md:px-[1.25rem]':
           img && size === 'large' && slots.default,
         'md:px-[1rem] md:py-[0.5rem] max-md:p-3 md:rounded-[calc(1rem+(1rem/2))] max-md:rounded-[calc(1rem+(0.25rem/2))]':
           !img && size === 'small',
