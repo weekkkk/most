@@ -36,7 +36,7 @@ const imgSrc = computed(() => `${config.app.baseURL}${props.img}`);
           img && size === 'large',
         'md:px-[2rem] max-md:px-[1.25rem] max-md:h-[4rem]':
           img && size === 'large' && slots.default,
-        'md:px-[1rem] md:py-[0.5rem] max-md:p-3 max-md:h-[4rem] md:rounded-[calc(1rem+(1rem/2))] max-md:rounded-[calc(1rem+(0.25rem/2))]':
+        'md:px-[1rem] md:py-[0.5rem]  max-md:p-3 max-md:h-[4rem] md:rounded-[calc(1rem+(1rem/2))] max-md:rounded-[calc(1rem+(0.25rem/2))]':
           !img && size === 'small',
       },
       { 'cursor-default': readonly },
