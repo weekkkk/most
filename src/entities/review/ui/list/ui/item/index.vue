@@ -7,7 +7,7 @@ const props = defineProps<ReviewListItemProps>();
 <template>
   <figure
     :class="[
-      'relative overflow-hidden flex flex-col justify-end w-[17.5rem]',
+      'relative overflow-hidden flex flex-col justify-end',
       'rounded-[3.5rem] max-2xl:rounded-[2rem] max-md:rounded-2xl',
     ]"
   >

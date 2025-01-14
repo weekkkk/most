@@ -13,7 +13,7 @@ const props = defineProps<ReviewListProps>();
     ]"
   >
     <ReviewListItem
-      v-for="({ id, ...rest }, index) in items"
+      v-for="({ id, ...rest }) in items"
       :key="id"
       v-bind="rest"
     />
@@ -24,7 +24,7 @@ const props = defineProps<ReviewListProps>();
       <UiSlider>
         <div
           class="flex justify-center keen-slider__slide"
-          v-for="({ id, ...rest }, index) in items"
+          v-for="({ id, ...rest }) in items"
           :key="id"
         >
           <ReviewListItem v-bind="rest" class="h-[16.1rem] w-[10.8rem]" />
