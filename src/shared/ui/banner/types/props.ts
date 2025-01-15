@@ -4,5 +4,7 @@ export type UiBannerProps = {
   description?: string;
   image: string;
   actionText: string;
+  noLineMerge?: boolean;
+  blackout?: boolean;
   loaderGradient: string[];
 };

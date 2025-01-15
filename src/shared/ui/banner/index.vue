@@ -49,7 +49,7 @@ onMounted(() => {
 
     <div
       :class="[
-        'absolute object-cover w-full h-full',
+        'absolute object-cover w-full h-full z-[10]',
         'text-center text-default',
         'py-60 max-2xl:py-[14.5rem] max-md:py-[7.75rem]',
       ]"
@@ -59,6 +59,7 @@ onMounted(() => {
           'text-[9rem] max-2xl:text-[6rem] max-md:text-[2.5rem]',
           '-tracking-[calc(9rem/100)] max-2xl:-tracking-[calc(6rem/100)] max-md:-tracking-[calc(2.5rem/100)]',
           'leading-[6rem] max-2xl:leading-[4.5rem] max-md:leading-[2rem]',
+          { 'leading-[7rem]': noLineMerge },
           'md:mb-10 max-md:mb-4',
           'whitespace-pre-wrap',
         ]"
@@ -101,6 +102,10 @@ onMounted(() => {
         v-if="route.path === '/'"
         :srcset="imgSrc.m.replace('jpg', 'png')"
         type="image/png"
+      />
+      <div
+        v-if="blackout"
+        class="bg-common w-full h-full opacity-60 absolute"
       />
       <img
         ref="$img"
