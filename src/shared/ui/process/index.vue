@@ -31,9 +31,9 @@ const imgSrc = computed(() => ({
   m: `${imgFolder.value}/m.jpg`,
 }));
 const imgPlaceholderSrc = computed(() => ({
-  d: `${imgFolder.value}/p/d.jpg`,
-  t: `${imgFolder.value}/p/t.jpg`,
-  m: `${imgFolder.value}/p/m.jpg`,
+  d: `${imgFolder.value}/p/d.png`,
+  t: `${imgFolder.value}/p/t.png`,
+  m: `${imgFolder.value}/p/m.png`,
 }));
 const $img = ref<HTMLImageElement>();
 const isLoad = ref(false);
