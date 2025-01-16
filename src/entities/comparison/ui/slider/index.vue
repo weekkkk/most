@@ -5,13 +5,11 @@ const props = defineProps<ComparisonSliderProps>();
 </script>
 
 <template>
-  <ClientOnly>
-    <UiSlider dot>
-      <ComparisonSliderSlide
-        v-for="(image, index) in images"
-        :key="index"
-        :image="image"
-      />
-    </UiSlider>
-  </ClientOnly>
+  <UiSlider dot>
+    <ComparisonSliderSlide
+      v-for="(image, index) in images"
+      :key="index"
+      :image="image"
+    />
+  </UiSlider>
 </template>

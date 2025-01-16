@@ -12,7 +12,7 @@ const props = defineProps<ReviewListItemProps>();
     ]"
   >
     <img
-      :src="`data:image/png;base64,${photo}`"
+      :src="`data:image/jpeg;base64,${photo}`"
       class="absolute object-cover w-full h-full"
     />
 

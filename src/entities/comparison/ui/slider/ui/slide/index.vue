@@ -11,7 +11,7 @@ const props = defineProps<ComparisonSliderSlideProps>();
     ]"
   >
     <img
-      :src="`data:image/png;base64,${image}`"
+      :src="`data:image/jpeg;base64,${image}`"
       class="w-full h-full object-cover max-md:absolute"
     />
   </figure>
