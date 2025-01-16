@@ -26,14 +26,14 @@ const imgFolder = computed(
   () => `${config.app.baseURL}imgs/process/${props.image}`
 );
 const imgSrc = computed(() => ({
-  d: `${imgFolder.value}/d.png`,
-  t: `${imgFolder.value}/t.png`,
-  m: `${imgFolder.value}/m.png`,
+  d: `${imgFolder.value}/d.jpg`,
+  t: `${imgFolder.value}/t.jpg`,
+  m: `${imgFolder.value}/m.jpg`,
 }));
 const imgPlaceholderSrc = computed(() => ({
-  d: `${imgFolder.value}/p/d.png`,
-  t: `${imgFolder.value}/p/t.png`,
-  m: `${imgFolder.value}/p/m.png`,
+  d: `${imgFolder.value}/p/d.jpg`,
+  t: `${imgFolder.value}/p/t.jpg`,
+  m: `${imgFolder.value}/p/m.jpg`,
 }));
 const $img = ref<HTMLImageElement>();
 const isLoad = ref(false);
