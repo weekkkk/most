@@ -98,11 +98,6 @@ onMounted(() => {
         type="image/jpeg"
       />
       <source :srcset="imgSrc.t" media="(min-width: 768px)" type="image/jpeg" />
-      <source
-        v-if="route.path === '/'"
-        :srcset="imgSrc.m"
-        type="image/jpeg"
-      />
       <div
         v-if="blackout"
         class="bg-common w-full h-full opacity-60 absolute"
