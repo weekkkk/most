@@ -46,7 +46,7 @@ const goToStart = () => {
             </a>
           </li>
           <li>
-            <a href="tg://resolve?domain=MostClean_manager">telegram</a>
+            <a href="https://t.me/+AsB8wbhjJSg2ZGVi">telegram</a>
           </li>
         </ul>
       </li>
