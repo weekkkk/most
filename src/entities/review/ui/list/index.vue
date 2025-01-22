@@ -2,6 +2,7 @@
 import type { ReviewListProps } from "./types";
 
 const props = defineProps<ReviewListProps>();
+
 </script>
 
 <template>

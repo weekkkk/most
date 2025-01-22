@@ -2,6 +2,8 @@
 import type { ReviewListItemProps } from "./types";
 
 const props = defineProps<ReviewListItemProps>();
+
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -12,7 +14,7 @@ const props = defineProps<ReviewListItemProps>();
     ]"
   >
     <img
-      :src="`data:image/jpeg;base64,${photo}`"
+      :src="`${config.app.baseURL}imgs/reviews/${photo}`"
       class="absolute object-cover w-full h-full"
     />
 
