@@ -1,5 +1,22 @@
 <script setup lang="ts">
-const { data } = await useAsyncData("reviews", () => ReviewService.getList());
+const data = [
+  {
+    id: "1",
+    photo: "reviews1.webp",
+  },
+  {
+    id: "2",
+    photo: "reviews2.webp",
+  },
+  {
+    id: "3",
+    photo: "reviews3.webp",
+  },
+  {
+    id: "4",
+    photo: "reviews4.webp",
+  },
+];
 </script>
 
 <template>
