@@ -1,3 +1,3 @@
 export type ReviewListItemProps = {
-  photo: ReviewDto["photo"];
+  photo: string;
 };
