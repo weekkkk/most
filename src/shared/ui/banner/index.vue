@@ -11,9 +11,9 @@ const imgFolder = computed(
   () => `${config.app.baseURL}imgs/banners/${props.image}`
 );
 const imgSrc = computed(() => ({
-  d: `${imgFolder.value}/d.jpg`,
-  t: `${imgFolder.value}/t.jpg`,
-  m: `${imgFolder.value}/m.jpg`,
+  d: `${imgFolder.value}/d.webp`,
+  t: `${imgFolder.value}/t.webp`,
+  m: `${imgFolder.value}/m.webp`,
 }));
 
 const $img = ref<HTMLImageElement>();
