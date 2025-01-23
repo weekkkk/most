@@ -1,18 +1,75 @@
 <script setup lang="ts">
 const route = useRoute();
 
-const { data, error } = await useAsyncData(
-  `comparation-sliders-${route.path}`,
-  () => ComparisonService.getByPageId(route.path)
-);
+const config = useRuntimeConfig();
 
-const beforeImages = computed(() =>
-  data.value?.map(({ beforeImage }) => beforeImage)
-);
+type RouteImages = {
+  routes: string[];
+  beforeImages: string[];
+  afterImages: string[];
+};
 
-const afterImages = computed(() =>
-  data.value?.map(({ afterImage }) => afterImage)
-);
+const imgs: RouteImages[] = [
+  {
+    routes: [
+      "/",
+      "/complex/shoes",
+      "/complex/boots",
+      "/repair/shoes",
+      "/restoration/shoes"
+    ],
+    beforeImages: [
+      `${config.app.baseURL}imgs/comparisons/travis-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/travis-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/mcqueen-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/mcqueen-b.webp`
+    ],
+    afterImages: [
+      `${config.app.baseURL}imgs/comparisons/dior-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/dior-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/gucci-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/gucci-b.webp`
+    ]
+  }, 
+  {
+    routes: ["/complex/sneakers"],
+    beforeImages: [
+      `${config.app.baseURL}imgs/comparisons/nb-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/nb-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/offwhite-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/offwhite-b.webp`
+    ],
+    afterImages: [
+      `${config.app.baseURL}imgs/comparisons/nb530-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/nb530-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/force-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/force-b.webp`
+    ]
+  },  
+  {
+    routes: [
+      "/restoration/bags",
+      "/repair/bags"
+    ],
+    beforeImages: [
+      `${config.app.baseURL}imgs/comparisons/mm-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/mm-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/ow-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/ow-b.webp`
+    ],
+    afterImages: [
+      `${config.app.baseURL}imgs/comparisons/cd-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/cd-b.webp`,
+      `${config.app.baseURL}imgs/comparisons/lv-a.webp`,
+      `${config.app.baseURL}imgs/comparisons/lv-b.webp`
+    ]
+  },  
+]
+
+const data: RouteImages | undefined = imgs.find(({ routes }) => routes.includes(route.path))
+
+const beforeImages = data?.beforeImages
+const afterImages = data?.afterImages
 
 const titleConst = {
   "/": "сравни",
@@ -48,14 +105,10 @@ const title = computed(() => {
       </h2>
     </header>
 
-    <main v-if="afterImages && beforeImages && !error">
+    <main v-if="afterImages && beforeImages">
       <ComparisonSlider :images="beforeImages" />
 
       <ComparisonSlider :images="afterImages" />
-    </main>
-
-    <main v-else>
-      {{ error }}
     </main>
   </section>
 </template>
