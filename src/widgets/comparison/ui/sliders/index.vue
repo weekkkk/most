@@ -1,13 +1,8 @@
 <script setup lang="ts">
+import type { RouteImages } from './types';
 const route = useRoute();
 
 const config = useRuntimeConfig();
-
-type RouteImages = {
-  routes: string[];
-  beforeImages: string[];
-  afterImages: string[];
-};
 
 const imgs: RouteImages[] = [
   {
@@ -19,31 +14,31 @@ const imgs: RouteImages[] = [
       "/restoration/shoes"
     ],
     beforeImages: [
-      `${config.app.baseURL}imgs/comparisons/travis-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/travis-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/mcqueen-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/mcqueen-b.webp`
+      `imgs/comparisons/travis-a.webp`,
+      `imgs/comparisons/travis-b.webp`,
+      `imgs/comparisons/mcqueen-a.webp`,
+      `imgs/comparisons/mcqueen-b.webp`
     ],
     afterImages: [
-      `${config.app.baseURL}imgs/comparisons/dior-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/dior-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/gucci-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/gucci-b.webp`
+      `imgs/comparisons/dior-a.webp`,
+      `imgs/comparisons/dior-b.webp`,
+      `imgs/comparisons/gucci-a.webp`,
+      `imgs/comparisons/gucci-b.webp`
     ]
   }, 
   {
     routes: ["/complex/sneakers"],
     beforeImages: [
-      `${config.app.baseURL}imgs/comparisons/nb-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/nb-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/offwhite-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/offwhite-b.webp`
+      `imgs/comparisons/nb-a.webp`,
+      `imgs/comparisons/nb-b.webp`,
+      `imgs/comparisons/offwhite-a.webp`,
+      `imgs/comparisons/offwhite-b.webp`
     ],
     afterImages: [
-      `${config.app.baseURL}imgs/comparisons/nb530-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/nb530-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/force-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/force-b.webp`
+      `imgs/comparisons/nb530-a.webp`,
+      `imgs/comparisons/nb530-b.webp`,
+      `imgs/comparisons/force-a.webp`,
+      `imgs/comparisons/force-b.webp`
     ]
   },  
   {
@@ -52,16 +47,16 @@ const imgs: RouteImages[] = [
       "/repair/bags"
     ],
     beforeImages: [
-      `${config.app.baseURL}imgs/comparisons/mm-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/mm-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/ow-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/ow-b.webp`
+      `imgs/comparisons/mm-a.webp`,
+      `imgs/comparisons/mm-b.webp`,
+      `imgs/comparisons/ow-a.webp`,
+      `imgs/comparisons/ow-b.webp`
     ],
     afterImages: [
-      `${config.app.baseURL}imgs/comparisons/cd-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/cd-b.webp`,
-      `${config.app.baseURL}imgs/comparisons/lv-a.webp`,
-      `${config.app.baseURL}imgs/comparisons/lv-b.webp`
+      `imgs/comparisons/cd-a.webp`,
+      `imgs/comparisons/cd-b.webp`,
+      `imgs/comparisons/lv-a.webp`,
+      `imgs/comparisons/lv-b.webp`
     ]
   },  
 ]

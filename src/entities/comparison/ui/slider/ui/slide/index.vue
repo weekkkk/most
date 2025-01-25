@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ComparisonSliderSlideProps } from "./types";
 const props = defineProps<ComparisonSliderSlideProps>();
+const config = useRuntimeConfig();
 </script>
 
 <template>
@@ -11,7 +12,7 @@ const props = defineProps<ComparisonSliderSlideProps>();
     ]"
   >
     <img
-      :src="`${image}`"
+      :src="`${config.app.baseURL}${image}`"
       class="w-full h-full object-cover max-md:absolute"
     />
   </figure>
