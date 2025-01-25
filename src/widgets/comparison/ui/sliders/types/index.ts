@@ -1,0 +1,1 @@
+export type { RouteImages } from './type'
