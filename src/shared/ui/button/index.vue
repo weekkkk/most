@@ -46,6 +46,7 @@ const imgSrc = computed(() => `${config.app.baseURL}${props.img}`);
     ]"
     :disabled="disabled"
     :readonly="readonly"
+    :aria-label="img || !slots.default ? 'Icon' : ''"
   >
     <figure v-if="img" class="h-[1.2rem] w-[1.2rem]">
       <img class="object-contain w-full h-full" :src="imgSrc" alt="" />

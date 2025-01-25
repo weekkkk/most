@@ -16,6 +16,7 @@ const config = useRuntimeConfig();
     <img
       :src="`${config.app.baseURL}imgs/reviews/${photo}`"
       class="absolute object-cover w-full h-full"
+      alt=""
     />
 
     <main

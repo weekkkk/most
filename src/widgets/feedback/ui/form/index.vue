@@ -43,6 +43,7 @@ const sentFeedback = async () => {
         <img
           src="/icons/truck.svg"
           class="w-[4.75rem] max-2xl:w-[3.6rem] max-md:w-[1.2rem]"
+          alt=""
         />
       </div>
       <h1
@@ -81,6 +82,7 @@ const sentFeedback = async () => {
           'max-2xl:top-[39.5rem] max-2xl:right-[46rem]',
           'max-md:hidden',
         ]"
+        alt=""
       />
       <img
         src="/icons/long-arrow-left.svg"
@@ -91,6 +93,7 @@ const sentFeedback = async () => {
           'max-2xl:top-[43.2rem] max-2xl:left-[43.9rem]',
           'max-md:hidden',
         ]"
+        alt=""
       />
 
       <form @submit.prevent="sentFeedback" class="flex flex-col items-center">
@@ -116,6 +119,7 @@ const sentFeedback = async () => {
       <img
         src="/icons/man.svg"
         class="w-[15rem] h-[14.3rem] mt-[.75rem] md:hidden"
+        alt=""
       />
     </div>
   </div>

@@ -117,18 +117,20 @@ const goToStart = () => {
     ]"
   >
     <ul class="max-h-0 flex justify-between items-end w-full">
-      <ul class="flex">
-        <li>
-          <a href="https://wa.me/79261234858" target="_blank">
-            <UiButton img="icons/whatsapp.svg" size="large" />
-          </a>
-        </li>
-        <li>
-          <a href="tg://resolve?domain=MostClean_manager">
-            <UiButton img="icons/telegram.svg" size="large" />
-          </a>
-        </li>
-      </ul>
+      <li class="flex">
+        <ul class="flex">
+          <li>
+            <a href="https://wa.me/79261234858" target="_blank">
+              <UiButton img="icons/whatsapp.svg" size="large" />
+            </a>
+          </li>
+          <li>
+            <a href="tg://resolve?domain=MostClean_manager">
+              <UiButton img="icons/telegram.svg" size="large" />
+            </a>
+          </li>
+        </ul>
+      </li>
 
       <li class="max-md:w-full">
         <a href="tel:89261234858" class="max-md:w-full">

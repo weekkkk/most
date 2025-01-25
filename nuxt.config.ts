@@ -148,4 +148,27 @@ export default defineNuxtConfig({
       "/price-list/4",
     ],
   },
+  app: {
+    head: {
+      link: [
+        {
+          rel: "preload",
+          href: "/fonts/PPNeueMontreal-Medium.woff2",
+          as: "font",
+          type: "font/woff2",
+          crossorigin: "anonymous",
+        },
+        {
+          rel: "preload",
+          href: "/fonts/PPNeueMontreal-Medium.woff", // путь к вашему шрифту woff
+          as: "font",
+          type: "font/woff",
+          crossorigin: "anonymous",
+        },
+      ],
+      htmlAttrs: {
+        lang: "ru",
+      },
+    },
+  },
 });

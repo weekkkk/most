@@ -12,22 +12,12 @@ const logoColor = computed<"white" | "blue">(() =>
 
 <template>
   <header
-    :class="[
-      'inset-x-0 top-0 flex items-center justify-between',
-      'md:pt-[3.5rem] max-md:pt-8',
-      'md:px-[3.5rem] max-md:px-3',
-      'absolute z-50',
-    ]"
+    class="inset-x-0 top-0 flex items-center justify-between md:pt-[3.5rem] max-md:pt-8 md:px-[3.5rem] max-md:px-3 absolute z-50"
   >
     <UiNav class="max-md:hidden w-full" :items="startNavItems" />
     <div>
       <NuxtLink
-        :class="[
-          'inline-block',
-          'relative',
-          'min-w-[8.95rem] max-2xl:min-w-[6.25rem] max-md:min-w-[4.95rem]',
-          'pb-[calc((34/(179/100))*1%)]',
-        ]"
+        class="inline-block relative min-w-[8.95rem] max-2xl:min-w-[6.25rem] max-md:min-w-[4.95rem] pb-[calc((34/(179/100))*1%)]"
         to="/"
       >
         <img
