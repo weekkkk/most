@@ -1,18 +1,70 @@
 <script setup lang="ts">
+import type { RouteImages } from './types';
 const route = useRoute();
 
-const { data, error } = await useAsyncData(
-  `comparation-sliders-${route.path}`,
-  () => ComparisonService.getByPageId(route.path)
-);
+const config = useRuntimeConfig();
 
-const beforeImages = computed(() =>
-  data.value?.map(({ beforeImage }) => beforeImage)
-);
+const imgs: RouteImages[] = [
+  {
+    routes: [
+      "/",
+      "/complex/shoes",
+      "/complex/boots",
+      "/repair/shoes",
+      "/restoration/shoes"
+    ],
+    beforeImages: [
+      `imgs/comparisons/travis-a.webp`,
+      `imgs/comparisons/travis-b.webp`,
+      `imgs/comparisons/mcqueen-a.webp`,
+      `imgs/comparisons/mcqueen-b.webp`
+    ],
+    afterImages: [
+      `imgs/comparisons/dior-a.webp`,
+      `imgs/comparisons/dior-b.webp`,
+      `imgs/comparisons/gucci-a.webp`,
+      `imgs/comparisons/gucci-b.webp`
+    ]
+  }, 
+  {
+    routes: ["/complex/sneakers"],
+    beforeImages: [
+      `imgs/comparisons/nb-a.webp`,
+      `imgs/comparisons/nb-b.webp`,
+      `imgs/comparisons/offwhite-a.webp`,
+      `imgs/comparisons/offwhite-b.webp`
+    ],
+    afterImages: [
+      `imgs/comparisons/nb530-a.webp`,
+      `imgs/comparisons/nb530-b.webp`,
+      `imgs/comparisons/force-a.webp`,
+      `imgs/comparisons/force-b.webp`
+    ]
+  },  
+  {
+    routes: [
+      "/restoration/bags",
+      "/repair/bags"
+    ],
+    beforeImages: [
+      `imgs/comparisons/mm-a.webp`,
+      `imgs/comparisons/mm-b.webp`,
+      `imgs/comparisons/ow-a.webp`,
+      `imgs/comparisons/ow-b.webp`
+    ],
+    afterImages: [
+      `imgs/comparisons/cd-a.webp`,
+      `imgs/comparisons/cd-b.webp`,
+      `imgs/comparisons/lv-a.webp`,
+      `imgs/comparisons/lv-b.webp`
+    ]
+  },  
+]
 
-const afterImages = computed(() =>
-  data.value?.map(({ afterImage }) => afterImage)
-);
+const data: RouteImages | undefined = imgs.find(({ routes }) => routes.includes(route.path))
+
+const beforeImages = data?.beforeImages
+const afterImages = data?.afterImages
 
 const titleConst = {
   "/": "сравни",
@@ -48,14 +100,10 @@ const title = computed(() => {
       </h2>
     </header>
 
-    <main v-if="afterImages && beforeImages && !error">
+    <main v-if="afterImages && beforeImages">
       <ComparisonSlider :images="beforeImages" />
 
       <ComparisonSlider :images="afterImages" />
-    </main>
-
-    <main v-else>
-      {{ error }}
     </main>
   </section>
 </template>
