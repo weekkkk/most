@@ -5,6 +5,8 @@ const goToStart = () => {
     behavior: "smooth",
   });
 };
+const config = useRuntimeConfig();
+const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
 </script>
 <template>
   <footer
@@ -95,7 +97,11 @@ const goToStart = () => {
             'relative md:z-10',
           ]"
         >
-          ап
+          <img 
+            :src="imgUrl" 
+            class="md:w-[0.95rem] md:h-[1.81rem] w-[0.66rem] h-[1.25rem]"
+            alt=""
+          >
         </div>
       </li>
 
