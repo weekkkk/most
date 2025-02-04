@@ -108,7 +108,7 @@ const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
       <li
         class="w-full md:justify-end text-right flex items-center max-md:col-start-1 max-md:col-end-3 max-md:row-start-4 max-md:mb-[0.9rem]"
       >
-        c в круге 2024
+        © 2024 - 2025
       </li>
     </ul>
   </footer>
