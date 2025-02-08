@@ -35,6 +35,7 @@ const startNavItems: UiHeaderProps["startNavItems"] = [
   {
     label: "обувь",
     to: "/complex",
+    delay: true,
     children: [
       {
         label: "туфли",

@@ -17,18 +17,12 @@ useSeoMeta({
 <template>
   <main
     v-if="service"
-    :class="[
-      'flex flex-col',
-      'gap-[10rem] max-2xl:gap-[5rem] max-md:gap-[5rem]',
-    ]"
+    class="flex flex-col gap-[10rem] max-2xl:gap-[5rem] max-md:gap-[5rem]"
   >
     <UiBanner v-bind="service.banner" />
 
     <div
-      :class="[
-        'flex flex-col',
-        'gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]',
-      ]"
+      class="flex flex-col gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]"
     >
       <UiProcess v-bind="service.process" v-if="service.process" />
 

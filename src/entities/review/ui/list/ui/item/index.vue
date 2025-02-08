@@ -8,23 +8,17 @@ const config = useRuntimeConfig();
 
 <template>
   <figure
-    :class="[
-      'relative overflow-hidden flex flex-col justify-end',
-      'rounded-[3.5rem] max-2xl:rounded-[2rem] max-md:rounded-2xl',
-    ]"
+    class="relative overflow-hidden flex flex-col justify-end rounded-[3.5rem] max-2xl:rounded-[2rem] max-md:rounded-2xl"
   >
     <img
       :src="`${config.app.baseURL}imgs/reviews/${photo}`"
       class="absolute object-cover w-full h-full"
+      loading="lazy"
       alt=""
     />
 
     <main
-      :class="[
-        'text-default relative text-center',
-        'pb-8 max-2xl:pb-[1.25rem]',
-        'max-md:hidden',
-      ]"
+      class="text-default relative text-center pb-8 max-2xl:pb-[1.25rem] max-md:hidden"
     ></main>
   </figure>
 </template>

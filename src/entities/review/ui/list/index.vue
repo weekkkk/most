@@ -2,15 +2,11 @@
 import type { ReviewListProps } from "./types";
 
 const props = defineProps<ReviewListProps>();
-
 </script>
 
 <template>
   <div
-    :class="[
-      'max-md:hidden grid grid-cols-4 gap-[1rem]',
-      'grid-rows-[22.5rem] max-2xl:grid-rows-[15.6rem]',
-    ]"
+    class="max-md:hidden grid grid-cols-4 gap-[1rem] grid-rows-[22.5rem] max-2xl:grid-rows-[15.6rem]"
   >
     <ReviewListItem v-for="{ id, ...rest } in items" :key="id" v-bind="rest" />
   </div>

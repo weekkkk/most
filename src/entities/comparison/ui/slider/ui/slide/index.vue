@@ -11,6 +11,7 @@ const config = useRuntimeConfig();
     <img
       :src="`${config.app.baseURL}${image}`"
       alt=""
+      loading="lazy"
       class="w-full h-full object-cover max-md:absolute"
     />
   </figure>

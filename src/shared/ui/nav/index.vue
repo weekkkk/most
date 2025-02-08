@@ -7,14 +7,12 @@ const props = defineProps<UiNavProps>();
 <template>
   <nav class="">
     <ul
-      :class="[
-        'flex',
-        {
-          'flex-col': col,
-          'justify-end': right && !col,
-          'items-end': right && col,
-        },
-      ]"
+      class="flex"
+      :class="{
+        'flex-col': col,
+        'justify-end': right && !col,
+        'items-end': right && col,
+      }"
     >
       <UiNavItem
         v-for="item in items"

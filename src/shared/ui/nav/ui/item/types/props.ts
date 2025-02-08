@@ -6,4 +6,5 @@ type PageLink = {
 export type UiNavItemProps = PageLink & {
   children?: PageLink[];
   absolute?: boolean;
+  delay?: boolean;
 };

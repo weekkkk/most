@@ -15,23 +15,7 @@ const bgImg = computed(
 
 <template>
   <li
-    :class="[
-      'inline-flex',
-      'items-center',
-      'md:gap-4 max-md:gap-[0.4rem]',
-      'whitespace-pre-wrap',
-      'text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem]',
-      'leading-[1.5rem] max-2xl:leading-small max-md:leading-small',
-      'before:inline-flex',
-      'md:before:h-[4rem] max-md:before:h-8',
-      'md:before:w-[4rem] max-md:before:w-8',
-      'before:items-center before:justify-center',
-      'md:before:bg-[length:2.5rem] max-md:before:bg-[length:1.2rem]',
-      'before:bg-center before:bg-no-repeat before:bg-brand-100',
-      'before:rounded-full',
-      'before:rounded-full',
-      'max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full',
-    ]"
+    class="custom_li-2 inline-flex items-center md:gap-4 max-md:gap-[0.4rem] whitespace-pre-wrap text-[2rem] max-2xl:text-[1.5rem] max-md:text-[1rem] leading-[1.5rem] max-2xl:leading-small max-md:leading-small before:inline-flex md:before:h-[4rem] max-md:before:h-8 md:before:w-[4rem] max-md:before:w-8 before:items-center before:justify-center md:before:bg-[length:2.5rem] max-md:before:bg-[length:1.2rem] before:bg-center before:bg-no-repeat before:bg-brand-100 before:rounded-full max-md:text-center max-md:flex-col max-md:justify-center max-md:w-full"
   >
     <slot>
       <span class="max-md:hidden">
@@ -45,16 +29,11 @@ const bgImg = computed(
 </template>
 
 <style scoped>
-li {
+li.custom_li-2 {
   margin-left: calc(v-bind(left) * 1rem);
   margin-right: calc(v-bind(right) * 1rem);
 }
-@media (max-width: 768px) {
-  li {
-    margin: 0 !important;
-  }
-}
-li::before {
+li.custom_li-2::before {
   background-image: v-bind(bgImg);
 }
 </style>

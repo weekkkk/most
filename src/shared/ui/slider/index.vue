@@ -30,10 +30,7 @@ const dotHelper = computed(() =>
       :disabled="!current"
       @click="slider.prev()"
       img="icons/arrow-left.svg"
-      :class="[
-        'absolute top-1/2 -translate-y-1/2 disabled:bg-common',
-        'md:left-14 max-md:left-0',
-      ]"
+      class="absolute top-1/2 -translate-y-1/2 disabled:bg-common md:left-14 max-md:left-0"
     />
 
     <UiButton
@@ -41,29 +38,20 @@ const dotHelper = computed(() =>
       :disabled="dotHelper.at(-1) === current"
       @click="slider.next()"
       img="icons/arrow-right.svg"
-      :class="[
-        'absolute top-1/2 -translate-y-1/2 right-14 disabled:bg-common',
-        'md:right-14 max-md:right-0',
-      ]"
+      class="absolute top-1/2 -translate-y-1/2 right-14 disabled:bg-common md:right-14 max-md:right-0"
     />
 
     <ul
       v-if="dot && slider"
-      :class="[
-        'absolute left-1/2 -translate-x-1/2 flex gap-2',
-        'bottom-14 max-2xl:bottom-4 max-md:bottom-2',
-      ]"
+      class="absolute left-1/2 -translate-x-1/2 flex gap-2 bottom-14 max-2xl:bottom-4 max-md:bottom-2"
     >
       <li class="inline-flex" v-for="(_slide, idx) in dotHelper" :key="idx">
         <UiButton
           style="padding: 0"
           @click="slider.moveToIdx(idx)"
           :readonly="current === idx"
-          :class="[
-            'md:h-[0.75rem] max-md:h-[0.4rem]',
-            'md:w-[0.75rem] max-md:w-[0.4rem]',
-            { 'bg-second-0': current !== idx },
-          ]"
+          :class="{ 'bg-second-0': current !== idx }"
+          class="md:h-[0.75rem] max-md:h-[0.4rem] md:w-[0.75rem] max-md:w-[0.4rem]"
         />
       </li>
     </ul>

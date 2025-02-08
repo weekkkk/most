@@ -26,9 +26,9 @@ watch(
       </UiButton>
       <div class="max-h-0">
         <UiButton
-          class="transition-all duration-200"
+          class="transition-all duration-200 -translate-y-full"
           @click="visible = false"
-          :class="['-translate-y-full', { 'translate-x-full': !visible }]"
+          :class="{ 'translate-x-full': !visible }"
           size="small"
           color="white"
         >

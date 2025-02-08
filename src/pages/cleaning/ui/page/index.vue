@@ -81,11 +81,7 @@ const processEndSteps: UiProcessProps["endSteps"] = [
     blackout
   />
   <div
-    :class="[
-      'flex flex-col',
-      'mt-[10rem] max-2xl:mt-[5rem] max-md:mt-[5rem]',
-      'gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]',
-    ]"
+    class="flex flex-col mt-[10rem] max-2xl:mt-[5rem] max-md:mt-[5rem] gap-[15rem] max-2xl:gap-[7.5rem] max-md:gap-[10rem]"
   >
     <FeedbackFormWidget />
 

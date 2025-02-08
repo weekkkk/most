@@ -6,4 +6,5 @@ type PageLink = {
 export type UiPageLinkProps = PageLink & {
   children?: PageLink[];
   absolute?: boolean;
+  delay?: boolean;
 };

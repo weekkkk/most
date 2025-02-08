@@ -46,14 +46,9 @@ onMounted(() => {
 
 <template>
   <section class="px-[7.6rem] max-2xl:px-[3.6rem] max-md:px-3">
-    <header :class="['text-center', 'mb-20 max-2xl:mb-14 max-md:mb-8']">
+    <header class="text-center mb-20 max-2xl:mb-14 max-md:mb-8">
       <h2
-        :class="[
-          'text-[5rem] max-2xl:text-[4rem] max-md:text-[1.75rem]',
-          '-tracking-[calc(5rem/100)] max-2xl:-tracking-[calc(4rem/100)] max-md:-tracking-[calc(1.75rem/100)]',
-          'leading-[5rem] max-2xl:leading-[4rem] max-md:leading-[1.5rem]',
-          'whitespace-pre-wrap',
-        ]"
+        class="text-[5rem] max-2xl:text-[4rem] max-md:text-[1.75rem] -tracking-[calc(5rem/100)] max-2xl:-tracking-[calc(4rem/100)] max-md:-tracking-[calc(1.75rem/100)] leading-[5rem] max-2xl:leading-[4rem] max-md:leading-[1.5rem] whitespace-pre-wrap"
       >
         <span class="max-md:hidden">
           {{ title }}
@@ -64,18 +59,12 @@ onMounted(() => {
       </h2>
     </header>
 
-    <main
-      :class="['grid', 'md:grid-cols-3 max-md:grid-cols-1', 'max-md:gap-8']"
-    >
+    <main class="grid md:grid-cols-3 max-md:grid-cols-1 max-md:gap-8">
       <UiProcessStepList class="z-10" :steps="_startSteps" />
 
-      <div :class="['flex justify-center items-center', 'max-md:row-start-1']">
+      <div class="flex justify-center items-center max-md:row-start-1">
         <figure
-          :class="[
-            'relative',
-            'md:min-h-[29rem] md:min-w-[38rem]',
-            'max-md:w-full max-md:pb-[calc((250/(345/100))*1%)]',
-          ]"
+          class="relative md:min-h-[29rem] md:min-w-[38rem] max-md:w-full max-md:pb-[calc((250/(345/100))*1%)]"
         >
           <picture>
             <source :srcset="imgSrc.d" media="(min-width: 1536px)" />
@@ -125,7 +114,7 @@ onMounted(() => {
 
     <footer
       v-if="!noFooter"
-      :class="['mt-[6.75rem] max-2xl:mt-20 max-md:mt-8', 'flex justify-center']"
+      class="mt-[6.75rem] max-2xl:mt-20 max-md:mt-8 flex justify-center"
     >
       <NuxtLink :to="{ path: '/', hash: '#feedback' }">
         <UiButton class="max-md:w-full">обратиться сейчас</UiButton>
@@ -134,14 +123,4 @@ onMounted(() => {
   </section>
 </template>
 
-<style scoped>
-.v-enter-active,
-.v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  opacity: 0;
-}
-</style>
+<style scoped></style>
