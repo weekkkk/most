@@ -19,15 +19,6 @@ const getFilesFromDirectory = (dir: string) => {
   return results;
 };
 
-const formatComponentName = (
-  pascalName: string,
-  postfix: string = "",
-  skip: number = 0
-) =>
-  `${pascalName.slice(0, skip)}${pascalName
-    .slice(skip)
-    .replaceAll("Ui", "")}${postfix}`;
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
@@ -42,59 +33,51 @@ export default defineNuxtConfig({
   components: {
     dirs: [
       {
-        path: "~/src/pages",
+        path: "~/src/shared", // shared дирректория
         extendComponent(component) {
-          component.pascalName = formatComponentName(component.pascalName, "");
+          component.pascalName = component.pascalName.replaceAll("Ui", ""); // Убираем Ui дирректории из имени компонента
+          component.pascalName = "Ui" + component.pascalName; // Добавляем Ui префикс
           return component;
         },
-        pattern: "**/*index.vue",
+        pattern: "**/*index.vue", // Файл для автоимпорта
         extensions: ["vue"],
       },
       {
-        path: "~/src/widgets",
+        path: "~/src/entities", // entities дирректория
         extendComponent(component) {
-          component.pascalName = formatComponentName(
-            component.pascalName,
-            "Widget"
-          );
+          component.pascalName = component.pascalName.replaceAll("Ui", ""); // Убираем Ui дирректории из имени компонента
           return component;
         },
-        pattern: "**/*index.vue",
+        pattern: "**/*index.vue", // Файл для автоимпорта
         extensions: ["vue"],
       },
       {
-        path: "~/src/features",
+        path: "~/src/features", // features дирректория
         extendComponent(component) {
-          component.pascalName = formatComponentName(
-            component.pascalName,
-            "Feature"
-          );
+          component.pascalName = component.pascalName.replaceAll("Ui", ""); // Убираем Ui дирректории из имени компонента
+          component.pascalName = component.pascalName + "Feature"; // Добавляем Feature постфикс
           return component;
         },
-        pattern: "**/*index.vue",
+        pattern: "**/*index.vue", // Файл для автоимпорта
         extensions: ["vue"],
       },
       {
-        path: "~/src/entities",
+        path: "~/src/widgets", // widgets дирректория
         extendComponent(component) {
-          component.pascalName = formatComponentName(component.pascalName);
+          component.pascalName = component.pascalName.replaceAll("Ui", ""); // Убираем Ui дирректории из имени компонента
+          component.pascalName = component.pascalName + "Widget"; // Добавляем Widget постфикс
           return component;
         },
-        pattern: "**/*index.vue",
+        pattern: "**/*index.vue", // Файл для автоимпорта
         extensions: ["vue"],
       },
       {
-        path: "~/src/shared",
-
+        path: "~/src/pages", // pages дирректория
         extendComponent(component) {
-          component.pascalName = formatComponentName(
-            component.pascalName,
-            "",
-            2
-          );
+          component.pascalName = component.pascalName.replaceAll("Ui", ""); // Убираем Ui дирректории из имени компонента
           return component;
         },
-        pattern: "**/*index.vue",
+        pattern: "**/*index.vue", // Файл для автоимпорта
         extensions: ["vue"],
       },
     ],
@@ -108,9 +91,10 @@ export default defineNuxtConfig({
   },
   imports: {
     dirs: [
-      "./src/widgets/*/*/index.ts",
-      "./src/entities/*/*/index.ts",
-      "./src/shared/*/index.ts",
+      "./src/widgets/*/*/index.ts", // Автоимпорты для widgets слоя
+      "./src/features/*/*/index.ts", // Автоимпорты для features слоя
+      "./src/entities/*/*/index.ts", // Автоимпорты для entities слоя
+      "./src/shared/*/index.ts", // Автоимпорты для shared слоя
     ],
   },
   modules: [
