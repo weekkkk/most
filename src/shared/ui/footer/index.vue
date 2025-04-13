@@ -6,7 +6,7 @@ const goToStart = () => {
   });
 };
 const config = useRuntimeConfig();
-const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
+const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`);
 </script>
 <template>
   <footer
@@ -64,7 +64,7 @@ const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
       </li>
 
       <li
-        class="w-full md:text-right max-md:col-start-1 max-md:col-end-3 max-md:row-start-2 max-md:mb-[2.4rem]"
+        class="relative w-full md:text-right max-md:col-start-1 max-md:col-end-3 max-md:row-start-2 max-md:mb-[2.4rem]"
       >
         поговорим?
 
@@ -73,6 +73,10 @@ const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
             <a href="mailto:mostcleanru@gmail.com">mostcleanru@gmail.com</a>
           </li>
         </ul>
+
+        <span class="absolute top-full md:hidden pt-2">
+          г. Москва Ходынская 2
+        </span>
       </li>
 
       <li class="w-full flex items-center max-md:col-start-1 max-md:col-end-3">
@@ -81,7 +85,7 @@ const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
 
       <li
         :class="[
-          'shrink-0 flex',
+          'shrink-0 flex relative',
           'max-md:col-start-2 max-md:row-start-1 max-md:col-end-3',
           'md:justify-center max-md:justify-end',
           'md:items-center max-md:items-start',
@@ -97,12 +101,18 @@ const imgUrl = computed(() => `${config.app.baseURL}icons/arrow-up.svg`)
             'relative md:z-10',
           ]"
         >
-          <img 
-            :src="imgUrl" 
+          <img
+            :src="imgUrl"
             class="md:w-[0.95rem] md:h-[1.81rem] w-[0.66rem] h-[1.25rem]"
             alt=""
-          >
+          />
         </div>
+
+        <span
+          class="absolute -bottom-[9rem] max-2xl:-bottom-[6.8rem] max-md:hidden"
+        >
+          г. Москва Ходынская 2
+        </span>
       </li>
 
       <li
