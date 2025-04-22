@@ -7,6 +7,7 @@ const user = reactive<FeedbackDataDto>({
 const disabled = computed(() => !(user.Name && user.Phone));
 const showDisabled = ref(false);
 const isLoading = ref(false);
+const isSuccess = ref(false);
 
 const sentFeedback = async () => {
   if (disabled.value) {
@@ -18,6 +19,10 @@ const sentFeedback = async () => {
     isLoading.value = true;
     const response = await FeedbackService.sendFeedbackForm(user);
     console.log("Успешно отправлено:", response);
+    isSuccess.value = true;
+    setTimeout(() => {
+      isSuccess.value = false;
+    }, 2000);
   } catch (error) {
     console.error("Ошибка при отправке данных:", error);
   } finally {
@@ -111,9 +116,16 @@ const sentFeedback = async () => {
         />
         <UiButton
           class="max-md:w-full"
-          :disabled="(showDisabled && disabled) || isLoading"
+          :class="{ '!bg-[#00DA41] !text-[#fff]': isSuccess }"
+          :disabled="(showDisabled && disabled) || isLoading || isSuccess"
         >
-          {{ !isLoading ? "вызвать курьера" : "отправляем..." }}
+          {{
+            !isLoading
+              ? isSuccess
+                ? "отправлено"
+                : "вызвать курьера"
+              : "отправляем..."
+          }}
         </UiButton>
       </form>
       <img
